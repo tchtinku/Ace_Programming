@@ -1,0 +1,15 @@
+1. Pick each element from the array as the starting element(i) of the subarray
+   -> Initialize an empty set to store distinct elements in the subarray
+   -> Pick each remaining element (i, i+1, ....n-1) from the array as the last element (jth).
+      a. Add the current element to the set.
+      b. If the set size equals K, then update the results and break from the inner loop. We have already found K distinct elements.
+       Increasing the size of the subarray will either make more distinct elements or increase the subarray size with repeated elements
+       that are not to be considered in the required results.
+   -> If j == size of the array, it means we have not found any desired subarray starting from the ith index and going forward
+   we will be having fewer elements to consider.
+   -> Break from the outer loop
+2. Print the output if found -- otherwise, print -1.
+
+TC: O(N^2), where N is the number of elements as the ends of the subarray are picked using two nested loops (one inside another)
+
+SC: O(N), in the worst case, we can have all N elements in our set
