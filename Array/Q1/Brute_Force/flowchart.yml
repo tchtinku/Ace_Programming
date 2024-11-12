@@ -1,0 +1,11 @@
+1. Start
+2. Input Array and Integer k
+3. Loop: For each element i in the array:
+   -> Initialize empty set for distinct elements
+4. Inner Loop: For each element j from i onward:
+   -> Add arr[j] to the set
+   -> If set Size == k: Print the subarray from i to j
+   -> If set Size > k: reak the inner loop
+5. End Loop: If fewer than k elements remain
+6. Output: 
+   -> If no valid subarray found, print -1

@@ -13,3 +13,21 @@
 TC: O(N^2), where N is the number of elements as the ends of the subarray are picked using two nested loops (one inside another)
 
 SC: O(N), in the worst case, we can have all N elements in our set
+
+-----------------------------
+
+1. Input Parsing:
+   -> Accept the array and the integer k inputs, representing the number of distinct elements desired in 
+   the subarray
+
+2. Iterate through the array:
+   -> For each element i in the array, Initialize an empty set to store distinct elements in the subarray
+
+3. Inner Loop for subarray search:
+   -> For each element j after i, add arr[j] to the set.
+   -> Condition Check:
+      => If the set's length reaches k, output the subarray from index i to j
+      => If the set size exceeds k, break the inner loop
+
+4. Ending Condition:
+   -> If the loop reaches the end without finding any subarray with exactly k distinct elements, print -1 
