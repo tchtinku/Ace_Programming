@@ -1,0 +1,8 @@
+1. Start
+2. Input array A, indices L and R.
+3. Set N as the length of A
+4. Initialise total_sum to 0
+5. Loop through each i from L to R.
+   -> Add A[i%N] to total_sum
+6. Output total_sum
+7. End
