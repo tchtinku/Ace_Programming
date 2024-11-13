@@ -1,0 +1,17 @@
+1. Start
+2. Input Array and Integer k
+3. Initialize:
+   -> Sliding window start i=0, end j=0
+   -> freq_map as empty directory
+   -> min_len as infinity, result as (-1, -1)
+4. Loop (j<n):
+   -> Add arr[j] to freq_map
+   -> If distinct elements (|freq_map|==k):
+      => Check if window length < min_len; update min_len and result
+      => Shrink Window:
+         ===> Remove or decrement arr[i] in freq_map, increment i
+5. End Loop
+6. Output:
+   -> If result unchanged, print -1
+   -> Else, print smallest subarray identified by result.
+

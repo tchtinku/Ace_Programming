@@ -1,0 +1,42 @@
+Steps:
+Using the sliding window technique
+
+1. Initialize the map to store count of each element.
+2. Initialise start and end to store index of the required subarray.
+3. Here i, j denote the start and end of the window respectively, initially: i=0, j=0.
+4. While the end < size of the array
+   -> In the map, increase the count of the end index's character by one. If the character is not present 
+   in the map, insert the character in the map, with count as one.
+   -> While the count of distinct elements in the map equals K (--that is, the size of the map is equal to K)
+     => Find the length of the subarray as j-i
+     => Compare it with the length of the minimum length we've found so far (initially 0)
+     => If the current length is less than the minimum, update the minimum length.
+     => Decrease the count of ith character by one. If it is already one, remove that character from the map
+     => Move i forward by one
+5. If end is equal to n, that means no subarray was found with K distinct characters, and we can print -1.
+Otherwise, we can print the start and end index we found.
+
+TC: O(N), where N = Number of elements. In the worst case, each element will be added once and removed once from the set
+SC: O(K). In the worst case, we will be only having K elements in our map
+
+------------
+
+1. Input Parsing: 
+    -> Accept an array and integer k as input, representing the number of distinct elements desired in the subarray.
+
+2. Initialise sliding window: 
+    -> Use two pointers i (window start) and j (window end), initially at 0.
+    -> Initialise an empty frequency map (freq_map) to store element count in the current window.
+    -> Keep track of min_len (smallest subarray length) and result (start and end indices of the smallest subarray)
+
+3. Expand Window:
+    -> Move j to the right, adding arr[j] to the frequency map
+
+4. Shrink Window When Condition is met:
+   -> if len(freq_map) == k (window contains exactly k distinct elements)
+       => Calculate the window length (j-i+1) and update min_len and result if this length is smaller.
+       => Move i to the right to reduce the window, adjusting the frequency map accordingly
+
+5. Output:
+   -> If no subarray with exactly k distinct elements is found, return -1
+   -> Otherwise, return the smallest subarray identified by result.
