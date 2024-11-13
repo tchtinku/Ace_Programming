@@ -1,0 +1,38 @@
+1. What can be clearly seen is that iterating from index 3 to 10 would lead to traversal of array A again and again.
+So, instead of doing this, we can first find the sum from index 0 to index 10, say a, and then find the sum from index 0 to 2,
+say b, and subtract b from a as a-b. This would give us the sum of subarray from index 3 to 10 in an infinite array b
+
+2. Now to find the sum, from index 0 to any index X, we first find how many times the given array A can occur completely up till the index X
+
+3. This can be simply found by X/N. Let variable count = X/N. Thus, the sum will be count * sumArray[N],
+where N is length of the array A
+
+4. Now the remaining part of the subarray, sum can be found by sumArray[(X%N)]
+
+Using this, we can find sum without iterating from L to R
+
+Time Complexity: O(Q+N) per test case, where N = size of the given array, Q = number of given queries. 
+In the worst case, we will traverse the given array, O(N), only one time, and for each query O(Q), we will be calculating 
+the sum in constant time. Thus a total of O(N+Q) time will be required
+
+Space Complexity: O(N), where N = size of given array. In the worst case, we will be storing the prefix sums 
+in an array of size N. Thus a total of O(N) space will be required
+
+------------------------------------------------------------------------------
+
+1. Calculate Prefix Sum Array:
+   -> Initialise an array prefix_sum to store cumulative sums of the elements in array A
+   -> Compute prefix_sum[i] as the sum of the first i elements of A
+
+2. Sum from index 0 to R:
+   -> Calculate how many times the entire array A repeats up to index R as count_R = R // N
+   -> Calculate the remaining part up to index R in one final partial array pass using remainder_R = R%N
+   -> sum_R = count_R * total_array_sum + prefix_sum[remainder_R+1] gives the sum from index 0 to R.
+
+3. Sum from index 0 to L-1:
+   -> Calculate how many times the entire array A repeats up to index L-1 as count_L = (L-1) // N
+   -> Compute the remainder of L-1 with remainder_L = (L-1) % N.
+   -> sum_L = count_L * total_array_sum + prefix_sum[remainder_L+1] gives the sum from index 0 to L-1.
+
+4. Result Calculation: 
+   -> subtract sum_L from sum_R to get the sum from indexx L to R. 

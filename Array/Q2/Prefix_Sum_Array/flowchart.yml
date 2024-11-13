@@ -1,0 +1,13 @@
+1. Start
+2. Input: array A, start index L, end Index R
+3. Calculate prefix_sum array for cumulative sums of elements in A.
+4. Sum from 0 to R:
+   -> Compute count_R = R // N and remainder_R = R % N.
+   -> Compute sum_R = count_R * total_array_sum + prefix_sum[remainder_R + 1]
+5. Sum from 0 to L-1:
+   -> Compute count_L = (L-1) // N and remainder_L = (L-1)%N
+   -> compute sum_L = count_L * total_array_sum + prefix_sum[remainder_L+1]
+6. Compute result as sum_R - sum_L
+7. Output Result
+8. End
+   
