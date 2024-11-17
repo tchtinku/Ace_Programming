@@ -1,0 +1,36 @@
+1. Let the 'ith' line be used to denote the first line of the container, and the 'jth' line be used to 
+denote the second line and 'n' be the number of lines in the sequence.
+
+2. We start from the widest conatiner --- that is, i=1 and j=n. Now for a better answer with a lesser width,
+it is necessary that the height is greater than the current heights.
+
+3. Now discard the height, which is lower among the two heights i and j because having a greater height will allow us to have a better answer.
+If it is i, then move the ith pointer to the right and if it is j move it to the left
+
+4. Calculate the area of the new container formed and update the maximum area if the newly found area is 
+greater than the previous maximum area.
+
+5. Do this until i is less than j.
+
+6. In the end, we return the maximum area found at the end of the loop.
+
+Time Complexity: O(n), n = number of elements in the given sequence.
+
+Since we traverse the sequence once to find the conatiner with maximum water, the time complexity is the order of n.
+
+Space Complexity: O(1), we are using constant space.
+
+--------------------------------------------------------------------
+
+1. Initialize: 
+    -> Two pointers: i at the beginning of the array (0) and j at the end of the array (n-1).
+    -> A variable max_area to store the maximum area encountered so far
+2. Loop until i<j:
+    -> Calculate the area of the container using the formula:
+        current_area = (j-i)*min(height[i], height[j])
+    -> Update max_area if current_area is greater than the current max_area
+3. Move Pointer:
+    -> if height[i] < height[j], increment i (move left pointer right)
+    -> Else, decrement j (move right pointer left).
+4. Return Result:
+    -> At the end of the loop, return max_area
