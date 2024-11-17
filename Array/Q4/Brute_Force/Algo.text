@@ -1,0 +1,32 @@
+1. Take a variable globalMax to store the overall maximum area and Initialize it to some very small value.
+2. Let n be the number of lines in the sequence
+3. Let height[i] be the height of the first line of any container. Then for each i, we find height[j] 
+where i<j<n-1, which is the height of the second line for the container. We compute its current area 
+in a variable currentArea which is (j-i)*min(height[j], height[i]) and compare with the maximum area --
+that is, globalMax achieved till now. If the currentArea greater than globalMax, we update the maximum
+area.
+4. In the end, we return the value of globalMax.
+
+Time Complexity: O(N^2), where N = Number of elements in the given sequence.
+
+For each starting height, we calculated the area of teh conatiner. This is done for all N lines in the 
+container, and in the worst case, this is done N times. hence is the Complexity is of order N^2.
+
+Space Complexity: O(1), we are using constant space
+
+------------------------------------------------------------------------------------------
+
+1. Initialize:
+     -> global_max to a very small value (-inf) to track the maximum area found.
+
+2. Nested Loops:
+     -> Outer loop i iterates over the starting line
+     -> Inner loop j iterates over all lines after i
+
+3. Calculate Area:
+     -> For each pair(i, j), compute the area using:
+           current_area = (j-i)*min(height[i], height[j])
+     -> Update global_max if current_area is greater
+
+4. Return Result
+     -> After travelling all pairs, return global_max 
