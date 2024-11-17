@@ -1,0 +1,14 @@
+1. Start
+2. Input: Binary array
+3. Initialize: total_ones = 0, max_diff=-inf
+4. Count Total Ones:
+   -> Loop through the array, increment total_ones for every 1
+5. Find Maximum Difference:
+   -> Nested Loops to traverse all subarrays
+       => Count count_zero and count_one for each subarray.
+       => Update max_diff = max(max_diff, count_zero - count_one).
+6. Handle Edge Case:
+   -> Ensure max_diff >= 0
+7. Compute Result: total_ones + max_diff
+8. Output Result
+9. End

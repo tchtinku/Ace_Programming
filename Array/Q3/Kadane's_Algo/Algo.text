@@ -1,0 +1,30 @@
+1. Initialize MAX and CURRMAX to zero; these  variables store overall max difference for any subarray and the current difference in the subarray respectively.
+2. Initialize TOTALONES to zero, which will store the total count of ones in the array.
+3. Now run a loop from index i=0 and increment TOTALONES by one if one is encountered.
+4. Consider the value of 1 as -1 and 0 as 1 -- that is, val=(ARR[i]==1)?-1:1
+5. Update CURRMAX and MAX -- that is, CURRMAX = Math.max(VAL, CURRMAX+VAL); and MAX=Math.max(MAX, CURRMAX)
+6. finally, return the count of all the ones in the array by returning the TOTALONES + MAX.
+
+Time Complexity: O(N), where 'N' denotes the number of elements in the array since we are traversing the array once
+
+Space Complexity: O(1), we are using constant space
+
+-----------------------------------------------------------------------------------
+
+1. Initialise Variables: 
+   -> MAX (max_diff) to store the maximum difference encountered
+   -> CURRMAX (curr_max) to store the current maximum difference in the ongoing subarray
+   -> TOTALONES to count the total number of 1s in the array
+
+2. Traverse the array:
+   -> Increment TOTALONES for each 1.
+   -> Consider the value of 1 as -1 and 0 as 1 (assigned to val)
+   -> Update CURRMAX
+      => CURRMAX == max(val, CURRMAX+val)
+   -> Update MAX:
+      => MAX = max(MAX, CURRMAX)
+
+3. Compute Result:
+   -> Add MAX to TOTALONES to get the result
+
+4. Output the result

@@ -1,0 +1,31 @@
+1. Initialize TOTALONES to zero, which will store the total count of ones in the array.
+2. Now start two nested loops, the outer one starting from index i=0 and the inner one from index i, both running till the 
+end of the array.
+3. Inside the loop - if you encounter one - increase TOTALONES by 1
+4. Initialize COUNTONE and COUNTZERO to zero, which will store the count of one and zero, respectively
+5. Consider all subarrays starting from i and find the difference between 1s and 0s.
+   Update MAX on every iteration to store the answer.
+6. finally, return the count of all the ones in the array by the sum TOTALONES+MAX
+
+Time Complexity: O(N^2), where 'N' denotes the number of elements in the array as we are using two nested loops
+
+Space Complexity: O(1), since we are using constant space. 
+
+-----------------------------------------
+
+1. Initialize Variables:
+   -> total_ones to count the number of 1s in the array.
+   -> max_diff to store the maximum difference between zeroes and ones in any subarray
+2. Count Total ones 
+   -> Traverse the array once and count the number of 1s, storing it into total_ones
+3. Find Maximum Difference Using subarrays:
+   -> Use two nested loops to consider all possible subarrays
+      => Outer loop starts at index i
+      => Inner loop starts at i and goes to the end of the array
+   -> For each subarray, count the number of zeroes (count_zeroes) and ones (count_one)
+   -> Update max_diff as the maximum value of count_zero - count_one.
+4. Handle Edge Case:
+   -> If the array contains only 1s, ensure max_diff is at least 0
+5. Compute Result:
+   -> Return total_ones + max_diff, which is the maximum number of 1s after flipping a subarray
+6. Outside the Result.

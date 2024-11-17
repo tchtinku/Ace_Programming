@@ -1,0 +1,12 @@
+1. Start
+2. Input: Binary Array
+3. Initialize: TOTALONES=0, CURRMAX=0, MAX=0
+4. Traverse Array:
+    -> Increment TOTALONES for each 1
+    -> Assign val=-1 if the element is 1; Otherwise val = 1
+    -> Update:
+        => CURRMAX = max(val, CURRMAX+val)
+        => MAX = max(MAX, CURRMAX)
+5. Compute Result: TOTALONES + MAX
+6. Output Result
+7. End
