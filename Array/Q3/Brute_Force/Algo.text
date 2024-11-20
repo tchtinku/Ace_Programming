@@ -29,3 +29,12 @@ Space Complexity: O(1), since we are using constant space.
 5. Compute Result:
    -> Return total_ones + max_diff, which is the maximum number of 1s after flipping a subarray
 6. Outside the Result.
+
+
+-----------------------
+
+Test Case:
+
+Enter the binary array (space-separated): 1 0 0 1 0
+
+Maximum number of ones after flipping a subarray: 4
