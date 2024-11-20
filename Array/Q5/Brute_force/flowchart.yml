@@ -1,0 +1,10 @@
+1. Start
+2. Input: List of all intervals
+3. Iterate: 
+   -> Outer loop: For each interval i
+   -> Inner loop: For each interval j>i
+   -> Check overlap condition:
+       if  (intervals[i][1] >= intervals[j][0] or intervals[j][1] >= intervals[i][0])
+   -> If overlap found, return False
+4. Output: If no overlap found, return True
+5. End
