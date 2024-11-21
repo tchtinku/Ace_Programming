@@ -1,0 +1,29 @@
+1. Start
+2. Input: Array arr from the user
+3. Sort:  Use the built-in sort() function to sort the array
+4. Output: Print the sorted array.
+5. End
+
+-----------------------------------------------
+
+Time Complexity: O(NlogN)
+   -> Sorting the array with Timsort
+Space Complexity: O(1)
+   -> No additional space used, as sorting is done in place.
+
+
+-----------------------------------
+
+Input: 
+Enter the size of the array: 5
+Enter the array elements (space-separated): 5 3 8 6 2
+
+Output:  Sorted Array: [2, 3, 5, 6, 8]
+
+----------------------------------------
+
+Input: 
+Enter the size of the array: 4
+Enter the array elements (space-separated): 10 1 7 4
+
+Output:  Sorted Array: [1, 4, 7, 10]

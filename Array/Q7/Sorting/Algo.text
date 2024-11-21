@@ -1,0 +1,18 @@
+1. Use any good sorting algorithm like Merge Sort, Quick Sort, or inbuilt sorting function of different languages
+2. Sort the array and just return.
+
+Time Complexity: O(N*log(N)), where N = size of the array
+We are using an inbuilt sort algorithm which has overall time complexity O(N*log(N))
+
+Space Complexity: O(1), as we are using constant space.
+
+---------------------------------------------------
+
+1. Input:
+     -> Array arr of integers
+2. Sorting:
+     -> Use Python's built-in sort() function to sort the array in ascending order. It uses Timsort, 
+      a hybrid sorting algorithm derived from Merge Sort and Insertion Sort.
+3. Output:
+     -> Return the sorted array
+     

@@ -1,0 +1,34 @@
+An efficient way to solve this problem is by using the technique of hashing. We will use a hashmap to check for particular arr[i] if there 
+exists any S-arr[i], which on adding gives us the desired sum s
+
+1. Initialize a list to store our results and a hashmap to store the count.
+2. For each element in the array arr[i], 0<=i<N, we will check whether there exists an element equals to (S-arr[i])
+already in the map
+3.If it exists, we will add the pair(arr[i], S-arr[i]) count number of times to the list, where count represents
+the frequency of (S-arr[i]) in the map.
+4. Increment the frequency of the current element (arr[i]) in the map.
+5. Sort the list of pairs as per he given output format and return this list.
+
+Time Complexity: O(N), where N=number of elements in the array
+In the worst case, for each element, we will be adding all the pairs formed by the elements in the array.
+
+Space Complexity: O(N), where N=Number of elements in the array.
+In the worst case, O(n) extra space is required for the hashmap to store the frequency of each element.
+
+----------------------------------------------------------------------------------------
+
+1. Input:
+     -> Array arr of integers and target sum target_sum
+2. Initialization: 
+     -> Initialize an empty list result to store the pairs
+     -> Initialise a frequency hashmap freq_map using  defaultdict
+3. Iterate Through the Array:
+     -> for each element arr[i]:
+         => Calculate its complement as \text{complement}=\text{target_sum}-\text{arr}[i]
+         => Check if complement exists in the hashmap.
+            ==> If it does, add all pairs (arr[i], complement) (repeated freq_map[complement] times) to result
+         => Increment the frequency of arr[i] in freq_map
+4. Sort the Result:
+     -> Sort result by the first element and then by second element.
+5. Output:
+     -> Return or print result

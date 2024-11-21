@@ -1,0 +1,27 @@
+1. Initialise a list to store our results.
+2. For each element in the array arr[i], 0<=i<N, check if (arr[i]+arr[j]), equals to given sum or not, where i<j<N.
+3. If the condition matches, add the pair(arr[i], arr[j]) to the list.
+4. Sort the list of pairs as per the given output format and return this list.
+
+Time Complexity: O(N^2), where N=size of the input array.
+
+In the worst case, for each element, we will be checking all other elements in the array.
+
+Space Complexity: O(1) in the worst case, as constant extra space is required
+
+----------------------------------------------------------------
+
+1. Input: 
+     -> Array of integers arr and target sum target_sum
+2. Iterate:
+     -> Use nested loops to iterate through the array:
+        => Outer loop index i starts at 0  and goes to N-2
+        => Inner loop index j starts at i+1 goes to N-1
+
+     -> Check if arr[i] + arr[j] =\text{target_sum}
+        => If true, append the pair (arr[i], arr[j]) to the result list.
+3. Sort:
+     -> Sort the list of pairs by the first element, and for equal first elements, by the second element.
+4. Output:
+     -> Return the sorted list of pairs.
+

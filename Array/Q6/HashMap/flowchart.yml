@@ -1,0 +1,44 @@
+1. Start
+2. Input: Array arr and target sum target_sum.
+3. Initialize: result=[], freq_map=defaultdict(int)
+4. Iterate:
+   -> For each num in arr:
+       => Calculate \text{complement}=\text{target_sum}-\text{num}
+       => If complement exists in freq_map:
+           ==> Add (\text{num}, \text{complement}) \times \text{freq_map[complement]} to result.
+       => Increment \text{freq_map[num]}.
+5. Sort: Sort result by elements in ascending order.
+6. Output: Return or print result
+7. End
+
+Time Complexity: O(N)
+   -> Traversing the array and updating the hashmap is O(N)
+Space Complexity: O(N)
+   -> The hashmap can store up to N elements in the worst case.
+
+------------------------------------------------------
+
+Example
+
+Input:
+Enter the size of the array: 5
+Enter the array elements (space-separated): 1 5 7 -1 5
+Enter the target sum: 6
+
+Output:
+Pairs with the given sum are:
+(1, 5)
+(1, 5)
+(7, -1)
+
+----
+
+Input:
+Enter the size of the array: 4
+Enter the array elements (space-separated): 2 4 3 5
+Enter the target sum: 10
+
+Output:
+No pairs found with the given sum.
+
+
