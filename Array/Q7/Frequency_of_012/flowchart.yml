@@ -1,0 +1,32 @@
+1. Start
+2. Input: Array arr of 0s, 1s and 2s.
+3. Count Frequencies: 
+   -> Use a loop to count occurrences of 0s, 1s and 2s
+4. Reconstruct Array:
+   -> Overwrite the array sequentially with 0s, 1s and 2s based on counts
+5. Output: Print the sorted array
+6. End
+
+-----------------------------------
+
+Time Complexity: O(N)
+    -> Two iterations of the array: one for counting and one for reconstructing.
+Space Complexity: O(1)
+    -> No extra space used beyond a few variables
+
+------------------------
+
+Example
+
+Input: Enter the array elements (only 0s, 1s and 2s, space-separated): 0 1 2 1 0 2 1 2 0
+
+Output: Sorted Array: [0, 0, 0, 1, 1, 1, 2, 2, 2]
+
+---------------------------------------------------
+
+Example
+
+Input: Enter the array elements (only 0s, 1s and 2s, space-separated): 2 2 1 0 1 0 0
+
+Output: Sorted Array: [0, 0, 0, 1, 1, 2, 2]
+  

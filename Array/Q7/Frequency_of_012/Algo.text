@@ -1,0 +1,31 @@
+Note this approach uses two scans to achieve the solution. We cannot use it when we have to specifically  
+solve the problem in a single scan
+
+We can exploit the property that we will have 0s, 1s and 2s in the array
+
+1. Count the frequency of 0s, 1s and 2s in the array
+2. start from i=0 and first fill the number of 0s present in the array
+3. Then fill the number of 1s present in the array
+4. Then fill in the number of 2s present in the array.
+5. Finally, we have sorted the array.
+
+Time Complexity: O(N), where N = size of the array. We are iterating over the array 2 times. First time
+counting the frequency of 0s 1s and 2s and then for filling the array. So the overall time complexity is O(N).
+
+Space Complexity: O(1), as we are using constant space.
+
+
+-----------------------------------------
+
+1. Input:
+      -> Take an array containing only 0s, 1s and 2s
+2. Count frequencies:
+      -> Count he occurrences of 0s, 1s and 2s using a single loop.
+3. Reconstruct Array:
+      -> Overwrite the array based on counts
+         => Fill count_0 elements with 0
+         => Fill count_1 elements with 1
+         =. Fill count_2 elements with 2
+4. Output: 
+      -> Return the sorted array
+ 
