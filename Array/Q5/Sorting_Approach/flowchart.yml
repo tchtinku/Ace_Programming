@@ -1,0 +1,48 @@
+1. Start
+2. Input: List of intervals
+3. Sort: Sort intervals by their start times.
+4. Iterates:
+    -> For each interval i (starting from 1), check:
+                          if intervals[i][0] < intervals[i-1][1]
+    -> If the condition is true, return "Overlapping".
+5. Output:
+   -> If np overlaps are found, return "Overlapping".
+6. End
+
+Time Complexity: O(Nlog(N))
+   -> Sorting the intervals takes O(N*log(N)), and iterating through the list takes O(N).
+
+Space Complexity: O(N)
+   -> Sorting may take additional space
+
+
+Example:
+
+1.
+Input:
+
+Enter the number of intervals: 
+4
+Enter each interval as start and end values (space-separated):
+1 3
+5 6
+2 4
+7 9
+
+Output:
+The intervals are overlapping.
+
+1.
+Input:
+
+Enter the number of intervals: 
+3
+Enter each interval as start and end values (space-separated):
+1 3
+4 6
+7 9
+
+Output:
+The intervals are non-overlapping.
+
+

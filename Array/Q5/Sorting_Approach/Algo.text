@@ -1,0 +1,24 @@
+1. Sort the list of intervals first on the basis of their start time and then iterate through the array.
+2. If the start time of an interval is less than the end of the previous interval, then there is an overlap,
+and we can return true.
+3.  If we iterate through the entire array without finding an overlap, we can return false.
+
+Time Complexity: O(N*log(N)), where N=total number of intervals. Sorting the list would take O(N*log(N))
+operations. Later, iterating over the list again to find the overlap would take N operations. Hence the
+overall time complexity boils down to O(N*logN)
+
+Space Complexity: O(N), where N = total number of intervals.
+
+Sorting takes O(N) extra space.
+
+-------------------------------------
+
+1. Input: List of intervals.
+2. Sort Intervals:
+    -> Sort the list of intervals based on the tart times.
+3. Check for overlaps:
+    -> Iterate through the sorted intervals from index 1 to end.
+    -> For each interval i, compare its start time with the end time of the previous interval i-1.
+    -> If intervals[i][0] < intervals[i-1][1], return True (overlap exists).
+4. Output:
+    -> If the loop completes without finding an overlap, return False.
