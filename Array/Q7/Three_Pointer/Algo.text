@@ -1,0 +1,41 @@
+1. The three pointers will be current, zeroPos, and twoPos.:
+  -> current: This will hold the position of the current element that we're on during the iteration
+  of the array. This will be initiated to zero.
+  -> zeroPos: This will hold the index where we will push any 0s that we may encounter. This will be initialized 
+  to zero.
+  -> twoPos: This will hold the index where we will push any 2s that we may encounter. This will be initialized
+  to n-1, where n=size of the array.
+
+2. We'll iterate through the array using the current pointer. Every element is either 0, 1 or 2. so let's see
+what we'll be doing in each of these cases:
+   -> If arr[current] == 0: In this case, we need to push the elements towards the front of the array. To do that, we
+   can swap arr[current] and arr[zeroPos], then we will increase both current and zeroPos by one.
+   -> If arr[current] == 1: In this case, we will just increase the current by one since we are only concerned 
+   with pushing 0s to the front and 2s to the end of the array.
+   -> If arr[current] == 2: In this case, we need to push the elements towards the end of the array. Again,
+   to do this, we'll just swap arr[current] and arr[twoPos]. We will decrease twoPos by one. However,
+   in this case, we will not increase the current by one.
+
+Time Complexity: O(N), where N=size of the array. We are only doing a single pass of the array.
+
+Space Complexity: O(1), as we are using constant space.
+
+--------------------------------------------------------------
+
+1. Initialize Pointers:
+   -> zeroPos = 0: Points to the position where the next 0 should go.
+   -> current = 0: Points to the current element being evaluated.
+   -> twoPos = n - 1: Points to the position where the next 2 should go.
+
+2. Iterate Through the Array:
+   -> If arr[current] == 0:
+        => swap arr[current] and arr[zeroPos].
+        => Increment zeroPos and current.
+   -> If arr[current] == 1:
+        => simply increment current.
+   -> If arr[current] == 2:
+        => Swap arr[current] and arr[twoPos].
+        => Decrement twoPos.
+    
+3. End:
+   -> When current > twoPos, the array is fully sorted.

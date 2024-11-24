@@ -1,0 +1,33 @@
+1. Start
+2. Input: Array arr of 0s, 1s and 2s 
+3. Initialize Pointers:
+   -> zeroPos = 0 
+   -> current = 0
+   -> twoPos = n - 1
+4. Iterate While current <= twoPos:
+   -> If arr[current] == 0:
+      => Swap arr[current] and arr[zeroPos].
+      => Increment zeroPos and current
+   -> If arr[current] == 1:
+      => Increment current.
+   -> If arr[current] == 2:
+      => Swap arr[current] and arr[twoPos]
+      => Decrement twoPos.
+5. Output: Sorted array.
+6. End
+
+-------
+
+Time Complexity: O(N)
+   -> Single traversal of the array ensures linear team complexity
+
+Space Complexity: O(1)
+   -> Uses a constant amount of space
+
+------------------------------------------
+
+Example: 
+Enter the array elements (only 0s, 1s and 2s, space-separated):
+2 0 2 1 1 0
+
+Output: Sorted Array: [0, 0, 1, 1, 2, 2]
