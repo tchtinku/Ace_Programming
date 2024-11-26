@@ -1,0 +1,26 @@
+The idea here is to do a linear approach which apparently is a brute force way to do this.
+
+1. Visit every element one by one.
+2. Check if the current value that we are looking at is the value that needs to be searched. If the element 
+is found, return the index at which we found it .
+3. Once all the elements are visited and we don't find the value, return -1
+
+Time Complexity: O(N), where N is the total number of elements in the array
+
+In the worst case, we have to Visit every element.
+
+Space Complexity: O(1), since a constant amount of space is used.
+
+--------------------------
+
+1. Input:
+   -> Accept an array of elements arr and the target value target
+2. Initialise:
+   -> Start iterating through the array from the first element.
+3. Traverse the Array:
+   -> For each element, check if it matches the target.
+   -> If a match is found, return the current index
+4. Not Found:
+   -> If the loop completes without finding the target, return -1
+5. Output:
+   -> Print the result (index of the target or -1 if not found)

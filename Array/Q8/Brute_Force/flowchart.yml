@@ -1,0 +1,42 @@
+1. Start
+2. Input: Arr arr and value target.
+3. Initialize: 
+     -> Loop index i=0
+4. Iterate Over Array:
+     -> If arr[i] == target, print index i and end.
+     -> Else, increment i
+5. Target Not Found:
+     -> If the end of the array is reached, print -1
+6. End
+
+Time Complexity: O(N)
+    -> In the worst case, every element in the array is visited once.
+Space Complexity: O(1)
+    -> Only a constant amount of extra space is used
+
+------
+
+Example:
+Enter the array elements (space-separated): 
+10 20 30 40 50
+
+Enter the value to search:
+30
+
+Output:
+Element 30 found at index 2
+
+-------
+
+
+Example:
+Enter the array elements (space-separated): 
+10 20 30 40 50
+
+Enter the value to search:
+60
+
+Output:
+Element 60 not found in the array
+
+
