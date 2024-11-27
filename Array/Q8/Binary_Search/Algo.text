@@ -1,0 +1,39 @@
+1. Find the mid-index
+2. If the value (key) being searched for is at the mid index, then return the mid index
+3. Compare the values at startIndex, endIndex and mid-index:
+    -> If the left subarray is sorted, check if the value (key) to be searched lies in the range:
+        => If it does, then search space reduces to [startIndex, (midIndex-1)].
+        => Otherwise, the search space reduces to [(mid-index+1), endIndex]
+    -> If the right subarray is sorted, check if the value(key) to be searched lies in the range:
+        => If it does, then search space reduces to [(mid-index+1), endIndex]
+        => Otherwise, the search space reduces to [startIndex, (mid-index - 1)]
+4. Repeat from step - 1 until the key is found
+5. Return -1 if the key is never found
+
+Time Complexity: O(log(N)), Where N is the total number of elements in the array
+
+Every time we split the array into two halves
+
+Space Complexity: O(1), since a constant amount of space is used
+
+-----------------------------
+
+1. Input: A rotated sorted array arr and a target value
+
+2. Initialise: Set start to 0 and end to len(arr) - 1
+
+3. Binary Search:
+    -> Calculate the mid index.
+    -> If the element at mid is equal to target, return mid
+    -> Check if the left half (arr[start] to arr[mid]) is sorted:
+       => If target lies in the range, update end=mid-1
+       => Otherwise, update start = mid+1
+    -> Otherwise, the right half (arr[mid] to arr[end]) is sorted:
+       => If target lies in the range, update start = mid+1
+       => Otherwise, update end=mid-1
+
+4. Repeat:
+    -> Continue steps until start and exceeds end.
+
+5. Output:
+    -> Return -1 if the target is not found.
