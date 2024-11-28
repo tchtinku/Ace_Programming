@@ -1,0 +1,36 @@
+1. Start
+2. Take input array `arr` and size `n`
+3. Sort `arr`
+4. Iterate `i` from 0 to n-2.
+5. Skip duplicates for arr[i]
+6. Set target = -arr[i], front = i+1, back = n-1
+7. While front < back:
+   -> Calculate sum = arr[front] + arr[back]
+      => Case 1: sum < target  
+          ==> Increment front
+          ==> Continue
+      => Return unique triplets
+      => End
+
+      => Case 2: sum == target
+          ==> Record triplet 
+          ==> Skip duplicates for front & back
+
+      => Case 3: sum > target
+          ==> Decrement back
+
+
+-----------------------
+
+Enter the number of elements in the array: 6
+Enter the elements of the array:
+-1
+0
+1
+2
+-1
+-4
+
+Triplets with zero sum
+(-1, -1, 2)
+(-1, 0, 1)

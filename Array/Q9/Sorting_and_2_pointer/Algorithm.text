@@ -1,0 +1,55 @@
+1. Sort the array in non-decreasing order because after the array is sorted, we don't have to process the
+same elements multiple times and hence we don't have to explicitly keep track of distinct triplets.
+
+2. Now since we want triplets such that x+y+z=0, we have x+y=-z. Let us fix z as arr[i]. Hence we want to 
+find two numbers x and y, such that their sum is equal to -arr[i] in the array.
+
+3. Let us assume that we are at ith index of the array and initialise variable target to -arr[i].
+
+4. So now we just need to find two elements x, y such that target=x+y.
+
+5. We will use two pointers, one will start from i+1, and the other will start from the end of the array.
+
+6. let the two pointers be front and back, where front=i+1 and back = n-1. Let sum=x+y, where x=arr[front] and
+y = arr[back]. We have to find the triplets such that target = sum. To do that, we will run a loop 
+while front < back. This loop will involve three cases:
+a. if(sum<target), we will have to increase the sum and hence increment the front pointer.
+b. Else if(sum>target), we will have to decrease the sum and hence decrease the back pointer.
+c. Else print the triplet and since we want distinct triplets, do the following.
+   => Increment the front pointer until arr[front] = x and front<back
+   => Decrement the back pointer until arr[back] = y and front < back
+
+7. While arr[i] = arr[i+1], keep on incrementing i.
+
+--------------
+
+Time Complexity: O(N^2), where N is the number of elements in the array.
+
+For every possible candidate for target, we can find if there are valid x and y in O(N) time. Thus the 
+complexity will be O(N*N).
+
+Space Complexity: O(1) as we are using constant extra space.
+
+---------------------------
+
+
+1. Sort the Array: Sort the input array in non-decreasing order.
+
+2. Iterate through the array:
+   -> For each index i, let arr[i] be the fixed element z, and calculate target=-arr[i].
+
+3. Use two pointers:
+   -> Initialise front = i+1 and back = n-1.
+   -> while front<back:
+      => Calculate sum = arr[front] + arr[back].
+      => Compare sum with target:
+         ==> If sum < target, increment front to increase the sum.
+         ==> If sum > target, decrement back to decrease the sum.
+         ==> If sum == target, record the triplet (arr[i], arr[front], arr[back]), and :
+             ===> Increment front while arr[front] is the same.
+             ===> Decrement back while arr[back] is the same.
+
+4. Skip duplicates for arr[i].
+  -> After processing, if arr[i] == arr[i+1], increment i to skip duplicates.
+
+5. Return unique triplets.

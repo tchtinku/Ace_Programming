@@ -1,0 +1,28 @@
+#### Find all triplets with zero sum ####
+
+1. The most trivial approach would be to find all triplets of the array and count all such triplets whose sum=0
+2. We can find the answer using three nested loops for three different indices and check if sum of 
+values at those indices adds up to zero.
+3. We will then create a set to keep the track of triplets we have visited. Run the first loop from 
+i=0 to i=n - 3, second loop from j = i+1 to j=n-2 and the third loop from k=j+1 to k=n-1.
+4. Check if arr[i] + arr[j] + arr[k] = 0:
+   => If the triplets is not present in the set, then print the triplet and insert triplet into the set since we
+   need distinct triplets only.
+   => Else Continue
+
+Time Complexity: O(N^3), where N= Number of elements in the array
+Space Complexity: O(1), as we are using constant extra memory
+
+-------------------------
+
+1. Initialise a set to store unique triplets.
+
+2. Iterate over the array using three nested loops:
+   -> Outer Loop: From i=0 to n-3
+   -> Middle Loop: From j=i+1 to n-2
+   -> Inner Loop: From k=j+1 to n-1
+
+3. Check if the sum of (arr[i], arr[j], arr[k]) equals zero:
+   -> If true and the triplet is not in the set, add it to the set
+
+4. Return all unique triplets stored in the set.

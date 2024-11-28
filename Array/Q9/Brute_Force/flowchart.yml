@@ -1,0 +1,28 @@
+1. Start
+2. Take input array 'arr' and size 'n'
+3. Initialize an empty set 'result'.
+4. Outer loop: iterate `i` from 0 to n-3. 
+   -> Middle loop: Iterate `j` from i+1 to n-2
+      => Inner loop: Iterate `k` from j+1 to n-1
+   -> Check if arr[i]+arr[j]+arr[k] == 0
+      => yes ==> Add triplet to `result` ===> Continue
+      => No ==> Continue
+5. Convert `result` set to list and return
+6. End
+
+---------------
+
+Input:
+Enter the number of elements in the array: 6
+Enter the elements of the array:
+-1
+0
+1
+2
+-1
+-4
+
+Output:
+Triplets with zero sum: 
+(-1, -1, 2)
+(-1, 0, 1)
