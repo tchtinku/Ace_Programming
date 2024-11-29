@@ -1,0 +1,26 @@
+1. Create another matrix of the same size, initially having all zeroes.
+2. Replace the new matrix(i,j) with the old matrix(j,i) and traverse both matrices element by element.
+If anywhere there is inequality return false, else continue.
+3. In the end, return true as the entir matrix is traversed.
+
+Time Complexity: O(N^2), as every element is visted once and there are N^2 elements in total, where N 
+is the size of the square matrix
+
+Space Complexity: O(N^2), as an extra matrix of size N*N is created while making the transpose of the matrix,
+where N is the size of the square matrix.
+
+------------- Check Symmetric Matrix Using transpose -------------
+
+1. Input Validation: 
+   -> Ensure the input matrix is square (i.e. number of rows equals number of columns).
+
+2. Create Transpose:
+   -> Create a new matrix of the same size and fill it with zeroes.
+   -> Copy the transpose of the original matrix into the new matrix by swapping rows and columns.
+
+3. Compare Matrices:
+    -> Compare each element of the original matrix with its corresponding element in the transposed matrix.
+    -> If any mismatch is found, return false.
+
+4. Return Result:
+    -> If no mismatch is found, return True.

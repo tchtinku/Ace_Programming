@@ -1,0 +1,35 @@
+1. Start
+2. Take input matrix `matrix` and size `n`.
+3. Initialize an empty `transpose` matrix of size N*N
+4. Loop through each element of `matrix`
+   -> Set `transpose[i][j]=matrix[j][i]`
+5. Loop through each element of `matrix` and `transpose`
+   -> If any element `matrix[i][j]!=transpose[i][j]`, return False
+6. If no mismatch found, return True.
+7. End
+
+---------------
+
+Input:
+
+Enter the size of the square matrix (N*N): 3
+Enter the elements row by row (space-separated):
+1 2 3
+2 4 5
+3 5 6
+
+Output: 
+The matrix is symmetric.
+
+-------------------
+
+Input:
+
+Enter the size of the square matrix (N*N): 3
+Enter the elements row by row (space-separated):
+1 2 3
+4 5 6
+7 8 9
+
+Output: 
+The matrix is not symmetric.
