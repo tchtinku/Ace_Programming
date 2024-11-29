@@ -1,0 +1,42 @@
+1. Start
+2. Take input array `arr` and size `n`
+3. Outer loop i from 0 to n-1
+4. Initialize count=0
+5. Inner loop: j from 0 to n-1
+6. If arr[i] == arr[j]: Increment count
+7. f count > n/2: Return arr[i] as majority element.
+8. Continue outer loop 
+9. If no majority element found, return -1
+10. End
+
+----------------------
+
+Example
+
+Input:
+Enter the number of elements in the array: 7
+Enter the elements of the array:
+3
+3
+4
+2
+4
+4
+4
+
+Output:
+The majority element is: 4
+
+--------------------------------
+
+Input: (No Majority)
+Enter the number of elements in the array: 6
+Enter the elements of the array: 
+1
+2
+3
+4
+5
+6
+
+Output: No majority element found,

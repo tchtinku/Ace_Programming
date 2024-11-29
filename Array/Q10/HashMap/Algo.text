@@ -1,0 +1,25 @@
+---- Majority element ---------
+
+1. We will maintain a hashmap to store element-frequency pairs.
+2. We will traverse the array and store the frequency of each element in the hashmap.
+3. If the frequency of any element becomes greater than the floor(N/2), we will return it as the 
+majority element.
+4. If no majority element is found, we will return -1.
+
+Time Complexity: O(N), where N denotes the size of the given array/list. We are traversing the Array
+exactly one time. Hence the time complexity is linear
+
+Space Complexity: O(N), where N denotes the size of the array/list. We are storing the elements of the 
+array and their respective frequencies in a hashmap. In the worst case, when the array contains 'N'
+distinct elements, then the hashmap takes O(N) space.
+
+-------------------------------------------------------
+
+1. Initialize Hashmap: Create a hashmap to store elements and their frequencies.
+
+2. Traverse Array:
+     -> For each element in the array, update its frequencies in the hashmap.
+     -> If the frequency of any element exceeds N//2, return it as the majority element.
+
+3. Check Majority Condition:
+     -> If no element satisfies the majority condition after traversing the entire array, return -1

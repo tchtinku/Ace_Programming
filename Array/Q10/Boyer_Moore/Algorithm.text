@@ -1,0 +1,35 @@
+1. We will maintain 'majorityElement' to keep track of the possible candidate of the majority element.
+
+2. We will initialize 'count' to zero to store the count of the majorityElement.
+
+3. Loop through array elements:
+   1. If count=0:
+      1. We set majorityElement to the current element, set count to one, and continue iterating.
+   2. Else:
+      1. If the current eleement is equal to the majorityElement, we increment the count by 1.
+      2. Else, we decrement the count by one.
+
+4. Now, we again traverse through the array and find the count the majorityElement.
+
+5. If the count is greater than floor(N/2), we return the majorityElement as the answer. Else, we return -1.
+
+Time Complexity: O(N), where N denotes the size of the given array/list. Hence the time complexity is linear.
+We are traversing the array exactly two times. So the overall time complexity is O(N)
+
+Space Complexity: O(1), constant space is used.
+
+--------------------------------------------------
+
+1.  Initialize Variables:
+      -> majorityElement: To store the potential majority element.
+      -> count: To keep track of the count for the majority candidate.
+2. First Traversal:
+      -> Traversal through the array: 
+           => If count==0, set majorityElement to the current element and reset count to 1.
+           => Else:
+               ==> If the current element matches majorityElement, increment count.
+               ==> Otherwise, decrement count.
+3. Second Traversal:
+      -> Count the occurrences of majorityElement in the array.
+      -> If the count exceeds floor(N/2), return majorityElement.
+      -> Otherwise, return -1

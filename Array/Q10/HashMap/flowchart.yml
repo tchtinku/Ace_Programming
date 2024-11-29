@@ -1,0 +1,44 @@
+1. Start
+2. Take input array `arr` and size `n`
+3. Initialize empty hashmap `freq_map`
+4. Traverse each element `num` in `arr`
+5. Increment `freq_map[num]` by 1
+6. If `freq_map[num] > n//2`: Return `num` as majority element.
+7. Continue loop
+8. If no majority element found, return -1
+9. End
+
+-------------------------------
+
+Example:
+
+Input:
+
+Enter the number of elements in the array: 7
+
+Enter the elements of the array:
+3
+3
+4
+2
+4
+4
+4
+
+Output:
+The majority element is: 4
+
+------------------------
+
+Input (No Majority):
+Enter the number of elements in the array: 6
+Enter the elements of the array
+1
+2
+3
+4
+5
+6
+
+Output:
+No majority element found.

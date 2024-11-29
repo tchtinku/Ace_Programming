@@ -1,0 +1,12 @@
+1. Start
+2. Take input array `arr` and size `n`
+3. Initialize `majorityElement=None` and `count =0`
+4. Traverse each element `num` in `arr`
+    -> If `count==0`: Set `majorityElement=num` and count = 1
+    -> Else: If `num==majorityElement`: Increment `count`
+           Else: Decrement `count`
+5. Reset `count=0`
+6. Traverse array again to count occurrences of `majorityElement`
+7. If `count>n//2`: Return `majorityElement`.
+Else Return -1
+8. End 
