@@ -1,0 +1,30 @@
+1. Traverse the matrix element and compare matrix(i,j) with matrix(j,i).
+
+2. If at any point inequality exists between them, return False, declare the 
+result as 'No'. Otherwise, continue till all the elements are compared one by one.
+
+3. When the loop continues till the end and doesn't return false at any point,
+return True. Declare the result 'Yes' as the matrix turns out to be Symmetric.
+
+Time Complexity:
+O(N^2), as every element is visited once and there are N^2 element in total, 
+where N = size of the square matrix
+
+Space Complexity:
+O(1), as constant space required for variables, where N=size of the square matrix.
+
+-------------------------------------------
+
+1. Input Validation:
+   -> Ensure the matrix is square by checking that the number of rows equals
+   the number of cols
+
+2. Compare Elements:
+   -> Traverse the matrix element by eleement.
+   -> Compare each element at position(i, j) with its counterpart (j, i),
+
+3. Handle mismatch:
+   -> If any mismatch is found, return False immediately.
+
+4. Result:
+   -> If all comparisons are valid, return True.

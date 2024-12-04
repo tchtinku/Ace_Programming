@@ -1,0 +1,14 @@
+Start
+  |
+Take matrix input 'matrix' and size 'n'
+  |
+Loop through rows 'i' from 0 to N-1
+  |
+    Loop through cols 'j' from 0 to N-1
+    |
+    +----> If `matrix[i][j] != matrix[j][i]`, return False ("No")
+  |
+If no mismatches, return True ("Yes")
+  |
+End
+ 
