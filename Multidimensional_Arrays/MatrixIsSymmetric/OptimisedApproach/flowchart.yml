@@ -11,4 +11,15 @@ Loop through rows 'i' from 0 to N-1
 If no mismatches, return True ("Yes")
   |
 End
+
+---------------------
+
+Enter the size of the squared marix (N*N): 3
+Enter the elements row by row (space-separated):
+1 2 3
+2 4 5
+3 5 6
+
+Output:
+Yes, the matrix is symmetric
  
