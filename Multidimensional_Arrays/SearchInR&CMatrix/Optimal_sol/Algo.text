@@ -1,0 +1,24 @@
+1. Start your search for top-right corner of the matrix.
+2. There can be three cases:
+   a. The current element is equal to target: return this position.
+   b. The current element is greater than the target: This means that any element on the current column is also greater. Thus we move to the previous column.
+   c. The current eleement is smaller than the targetL This means that any element on the current row is also smaller. Thus we move to the next row.
+
+Time Complexity: O(N), in the worst case, only one traversal from the top-right corner to the bottom left corner is needed -- that is 
+from 0 to N-1 and j from N-1 to 0 with at most 2*N steps.
+
+Space Complexity: O(1), as only a constant space is required in the worst case
+
+--------------------
+
+Search an element in a Sorted 2D matrix (Starting from Top-right)
+
+1. Start at the Top-Right Corner:
+   -> Initialise the row pointer to 0 (i=0) and the col pointer to the last col (j=N-1).
+2. Traverse the Matrix:
+   -> While i<N and j>=0 (i.e., within matrix bounds):
+      => If the current element (matrix[i][j]) is equal to the target, return the position (i, j).
+      => If the current element is greater than the target, move left by decrementing the column pointer (j--)
+      => If the current element is smaller than the target, move down by incrementing the row pointer (i++)
+3. Return Result:
+   -> If the target is not found during reversal, return {-1, -1}.
