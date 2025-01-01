@@ -16,3 +16,18 @@ While i < n and j >= 0:
 If not found, return (-1, -1)
   |
 End
+
+------------------
+
+Example 1:
+
+Input 1:
+Enter the number of rows and cols in the square matrix: 3
+Enter the elements of the matrix row by row (sorted in both rows and cols):
+1 4 7
+2 5 8
+3 6 9
+Enter the target element to search for: 5
+
+Output 1:
+Element found at position: (1, 1)
