@@ -1,0 +1,28 @@
+Start
+  |
+Take input: matrix and target
+  |
+For each row i in matrix:
+   For each column j in row:
+      If matrix[i][j] == target:
+         Return (i, j)
+  |
+If the target is not found, return (-1, -1)
+  |
+End
+
+-----------------
+
+
+Example:
+
+Input 1: 
+Enter the number of rows and cols in the square matrix: 3
+Enter the element of the matrix row by row:
+1 2 3
+4 5 6
+7 8 9
+Enter the target element to search for: 5
+
+Output 1:
+Element found at position: (1, 1)

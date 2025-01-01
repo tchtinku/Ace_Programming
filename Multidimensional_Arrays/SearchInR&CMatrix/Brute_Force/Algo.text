@@ -1,0 +1,32 @@
+The simple idea is to traverse the array and to search element one by one.
+
+1. Run a nested loop for each row & each column and iterate through each element of the given matrix.
+
+2. Check if the element at the current row & column is the target element.
+
+3. If it is, return the position of the current row & column is the target element.
+
+4. If the element is not found in the entire matrix, return {-1, -1}
+
+Time Complexity: O(N^2), we have to traverse the whole matrix that would take O(N^2) time in the worst case.
+
+Space Complexity: O(1), as only a constant space is required in the worst case.
+
+---------------------
+
+1. Understand the problem:
+   -> You need to find the position of a target element in a 2D matrix.
+   -> If the element is found, return its position as {row, column}
+   -> If not, return {-1, -1}
+
+2. Steps:
+   -> Loop through each row of the matrix.
+   -> For each row, loop through each column.
+   -> Check if the current element matches the target:
+      => If yes, return the current position as {row, column}.
+   -> If the entire matrix is traversed without finding the element, return {-1, -1} 
+
+3. Complexity:
+   -> TC: O(N^2), as teh algorithm checks every element in a N*N matrix.
+   -> SC: O(1), as no additional data structure is used.
+

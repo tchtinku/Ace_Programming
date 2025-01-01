@@ -14,3 +14,25 @@ Steps
 
 Time Complexity: O(1), as we are using the constant time.
 Space Complexity: O(1), as we are using constant space.
+
+---------------------
+
+Count occurrences of number in Matrix diagonal form
+
+1. Understand the problem:
+   -> Given a matrix where each diagonal contains numbers repeated a specific number of times.
+   -> You need to calculate the occurrences of a given number q based on its position in the matrix pattern.
+
+2. Logic:
+   -> If q is less than or equal to 1 + N: Return q - 1.
+      This is because the occurrences increase as we approach the main diagonal.
+
+   -> Else: Return 2* N-q+1
+      This accounts for the symmetrical nature of the diagonals beyond the main diagonal.
+
+3. Steps:
+   -> Take N (matrix size) and q (query number) as inputs.
+   -> check if q=<1+N:
+      => If yes, return q-1.
+   -> Otherwise, return 2*N-q+1
+
