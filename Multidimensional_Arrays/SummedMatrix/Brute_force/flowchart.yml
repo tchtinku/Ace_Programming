@@ -1,0 +1,48 @@
+Start
+  |
+Take input: size of matrix (N) and target value (q)
+  |
+Initialize total=0
+  |
+Loop over rows i from 1 to N
+  | 
+    Loop over columns j from 1 to N
+    |
+    +-> If  i+j = q, increment total by 1
+    |
+Continue to next iteration
+  |
+After all loops, print total
+  |
+End
+
+------------------
+
+Example 1:
+ 
+Enter the size of the square matrix (N): 5
+Enter the target sum value (q): 4
+
+Output 
+
+The total number of cells where i+j = 4 is 3.
+
+Explanation
+In a 5*5 matrix, the cells that satisfy i+j = 4 are
+ (1, 3), (2, 2), (3, 1)
+
+
+Example 2:
+ 
+Enter the size of the square matrix (N): 6
+Enter the target sum value (q): 8
+
+Output 
+
+The total number of cells where i+j = 8 is 5.
+
+Explanation
+In a 6*6 matrix, the cells that satisfy i+j = 4 are
+ (2, 6), (3, 5), (4, 4), (5, 3), (6, 2)
+
+

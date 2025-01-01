@@ -1,0 +1,33 @@
+In this approach, we would use a variable total to store the number of cells having value q. Simply
+loop over the elements to find the answer
+
+1. Create a variable total to store the number of cells that have the value q. Initialise total to 0.
+2. Next, start two nested loops -- the outer one starting from index i=1 and inner one from index j=1 -- both running
+until the array's end.
+3. For every instance, where i+j=q, increase the total by one.
+4. Return the variable total.
+
+Time Complexity: O(N^2), where N = size of the array. Here we are nesting two loops -- one is going from 1 to N,
+and the second is going from 1 to N for every i in the first loop -- making the time Complexity N^2
+
+Space Complexity: O(1), as we use constant space. 
+
+------------------------
+
+Counting Cells Matching Condition i+j = q
+
+1. Input Initialization: 
+   -> Take the size of the array N and value q.
+   -> Create a 2D array (matrix) of size N*N.
+
+2. Count Matching Cells:
+   -> Initialise a variable total to 0.
+   -> Loop over the matrix with two nested loops:
+      => Outer loop for rows i from 1 to N.
+      => Inner loop for columns j from 1 to N.
+   -> for every cell, check if i+j = q.
+      => If true, increment total by 1.
+
+3. Return Result
+   -> Print the value of total, which represents the count of cells satisfying the Condition.
+
