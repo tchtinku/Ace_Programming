@@ -1,0 +1,50 @@
+This approach is based on the fact that when we rotate an array to the right by K times, it transfers K elements
+from the end to the beginning of the array, while the remaining elements shift towards the end.
+
+Steps:
+
+1. The effective rotations in MAT can be from 0 to M-1, as we get the same matrix MAT after every M rotations.
+So, we will set K to K%M.
+
+2. Now, we traverse MAT row-wise. We will follow the below steps to rotate the ith row of MAT -
+   a. Taking an example, let the MAT[i] be -
+        1 2 3 4 5 6
+   b. First, we reverse all the elements of the row MAT[i].
+        6 5 4 3 2 1
+   c. We then reverse the first K elements. (For the sake of example, let's take K=2)
+        5 6 4 3 2 1
+   d. Finally, we reverse the next N-K Elements
+        5 6 1 2 3 4
+
+3. We will initialise a vector/list result and append each row after rotating it.
+
+4. Finally, we return the result.
+
+Time Complexity:
+O(N*M), where N and M are the number of rows and columns of the given matrix. The time complexity to rotate 
+one row is O(M), and there are N rows. So the overall time complexity is O(N*M)
+
+Space Complexity: O(1) as constant space is used
+        
+---------------------------
+Rotate Each Row of a Matrix by K steps
+
+Steps:
+
+1. Determine effective Rotations:
+   -> Set K=K%M, where M is the number of cols in the matrix. This handles cases where K is larger than M.
+
+2. Row-wise Rotation:
+   -> For each row in the matrix: 
+      => Reverse the entire row:
+         ==> Reverse all elements in the current row.
+      => Reverse the first K Elements:
+         ==> Reverse the first K elements of the row.
+      => Reverse the remaining elements:
+         ==> Reverse the remaining M-K elements in the row.
+
+3. Collect the Rotated Rows:
+   -> Append the rotated rows to a new matrix.
+
+4. Return the result:
+   -> Return the rotated matrix.
