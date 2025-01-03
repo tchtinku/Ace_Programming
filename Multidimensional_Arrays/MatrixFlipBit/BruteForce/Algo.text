@@ -1,0 +1,48 @@
+We need to count the number of 1s which are in the same row or column as any of the 0 in the given matrix. To do that,
+we iterate through the matrix with the variable i for the row and j for the column.
+
+If for any cell mat[i][j]=0, we iterate the ith row and jth column and count the number of 1s in them and mark them
+as -1 to not revisit them and mark them as -1 to not revisit them.Finally, we return the count.
+
+Steps:
+
+1. Take a variable count to count the number of bits to be flipped.
+
+2. Iterate through the matrix with the variable i for row and variable j for the column and check for each element
+of the matrix if mat[i][j] is zero.
+
+3. If mat[i][j] is zero we iterate in the ith row and jth column using a variable k and increment the count if mat[i][k]
+or mat[k][j] is one.
+
+4. If the above conditions are satisfied, we also mark the cell as -1 to not count it again.
+
+5. Finally, we return the count.
+
+Time Complexity: O(n^3), where n = number of rows and columns of the matrix. In the worst case, we can have all 0s, and in that case,
+each element will have an order of n loop. Thus the overall complexity will be the order of n^3.
+
+Space Complexity: O(1), as we are using constant space
+
+---------------------------------------------------------
+
+algorithm: Count 1s in  the Same Row or Columns as Any 0 in a matrix
+
+Problem explanation: 
+We need to count the number of 1s in the same row or column as any 0 in the matrix. To ensure no 1 is counted twice, 
+mark visited cells as -1
+
+Steps:
+
+1. Initialise a variable count to store the total count of 1s to be flipped.
+
+2. Iterate through the matrix using a nested loop:
+   -> Outer loop iterates rows (i)
+   -> Inner loop iterates columns (j).
+
+3. For each cell:
+   -> If mat[i][j] == 0:
+      => Iterate through the i-th row and j-th column using a variable k:
+         ==> If mat[i][k] == 1, increment count and mark mat[i][k] = -1.
+         ==> If mat[k][j] == 1, increment count and mark mat[k][j] = -1.
+
+4. After processing all elements, return count.

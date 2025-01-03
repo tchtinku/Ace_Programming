@@ -1,0 +1,39 @@
+Start
+  |
+Take input: matrix (N*N)
+  |
+Initialize count = 0
+  |
+For i = 0 to N - 1:
+   For j = 0 to N-1:
+     If matrix[i][j] == 0:
+        For k = 0 to N-1:
+           If matrix[i][k] == 1:
+             Increment count
+             Mark matrix[i][k] = -1
+           If matrix[k][j] == 1:
+             Increment count
+             Mark matrix[k][j] = -1
+   |
+  Return Count
+   |
+  End
+
+-----------------------------
+
+Example 1:
+
+Input 1: Enter the size of the matrix (N):3
+Enter the matrix row by row (space-separated binary values): 
+1 1 0
+0 1 1
+1 1 1
+
+Output 1:
+Input Matrix:
+1 1 0
+0 1 1
+1 1 1
+
+count of 1s to be flipped = 6
+
