@@ -1,0 +1,66 @@
+Start
+  |
+Take input: matrix (N*N)
+  |
+Step 1: Transpose the matrix:
+   For i=0 to N-1:
+       For j=i to N-1:
+          Swap matrix[i][j] with matrix[j][i]
+  |
+Step 2: Reverse each column: 
+    For i=0 to N-1:
+      j=0, k=N-1
+      while j<k:
+         Swap matrix[j][i] with matrix[k][i]
+         Increment j, Decrement k
+  |
+Print the rotated matrix
+  |
+End
+
+--------------------------------------------------------
+
+Example 1: 
+Input 1:
+
+Enter the size of the square matrix (N): 4
+Enter the elements row by row:
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+Output 1:
+Original Matrix:
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+Rotated Matrix (90 degrees anti-clockwise):
+4 8 12 16
+3 7 11 15
+2 6 10 14
+1 5 9 13
+
+
+Example 2: 
+Input 2:
+
+Enter the size of the square matrix (N): 3
+Enter the elements row by row:
+1 2 3
+4 5 6
+7 8 9
+
+Output 1:
+Original Matrix:
+1 2 3
+4 5 6
+7 8 9
+
+
+Rotated Matrix (90 degrees anti-clockwise):
+3 6 9
+2 5 8
+1 4 7

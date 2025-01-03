@@ -1,0 +1,34 @@
+1. To solve the problem, we have to perform two tasks.
+   a. finding the transpose
+   b. Reversing the columns
+
+2. For finding the transpose of the matrix we swap ARR[i][j] with ARR[j][i] for each 0<=i<N and i<=j<N --
+that is, we swap elements across the principal diagonal of the matrix.
+
+3. Then we reverse the columns by swapping ARR[j][i] to ARR[k][i] for each 0<=i<N representing the columns and 0<=j, k<N 
+where,
+a. j is incrementing from 0 to the point where j>=k.
+b. k is decremented from N-1 to the point w
+
+Time Complexity: O(N^2), where N*N is the dimension of the matrix. Since the matrix is traversed twice, once while taking transpose
+and then while reversing columns, the time complexity is O(N^2)
+
+Space Complexity: O(1) as a constant space is needed because we are doing an in-place rotation.
+
+------------------------------------------
+
+Rotate a Square Matrix (N*N) 90 degrees Anti-clockwise using transpose and column reversal
+
+1. Finding the transpose:
+   -> Swap ARR[i][j] with ARR[j][i] for each 0<=i<N and i<=j<N.
+   -> This operation swaps the elements across the principal diagonal.
+
+2. Reversing the Columns:
+   -> For each column i(0<=i<N)
+       -> Swap ARR[i][j] with ARR[k][i], where:
+          -> j starts from 0 and increments
+          -> k starts from N-1  and decrements until j>=k.
+   -> This operation reverses the order of elements in each column.
+
+3. Print the Matrix:
+   -> The matrix is now rotated 90 degrees anti-clockwise
