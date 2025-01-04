@@ -1,0 +1,55 @@
+Start
+  |
+Take input: matrix (N*N)
+  |
+Initialize count=0, visitedRow[n]=False, visitedCol[n]=False
+  |
+Locate all 0s in the matrix and store their positions in zeroPositions[]
+  |
+For each (i, j) in zeroPositions[]:
+    If visitedRow[i] is False:
+       Traverse row i, count 1s, mark as -1
+       Mark visitedRow[i] = True
+    If visitedCol[j] is False:
+       Traverse column j, count 1s, mark as -1
+       Mark visitedCol[j] = True
+  |
+Return Count
+  |
+End
+
+-------------------------
+
+Example 
+
+Input 1:
+Enter the size of the matrix (N): 3
+Enter the matrix row by row (space-separated binary values):
+1 1 0
+0 1 1
+1 1 1 
+
+Input Matrix:
+1 1 0
+0 1 1
+1 1 1
+
+Count of 1s to be flipped: 6
+
+---------------
+
+Input 2:
+Enter the size of the matrix (N): 4
+Enter the matrix row by row (space-separated binary values):
+1 0 1 1
+1 1 1 1
+0 1 1 1
+1 1 1 1
+
+Input Matrix:
+1 0 1 1
+1 1 1 1
+0 1 1 1
+1 1 1 1
+
+Count of 1s to be flipped: 9

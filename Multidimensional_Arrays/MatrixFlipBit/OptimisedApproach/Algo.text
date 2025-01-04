@@ -1,0 +1,47 @@
+If we ensure that a particular row or column is already checked, we need not recheck it. We can do this by maintaining a visited array 
+for rows and columns and checking for every time we encounter a '0' that if its row or column is already visited, we need not recheck it.
+
+1. Make 2 arrays visitedRow and visitedCol each of size n to store if any particular row and column is already 
+checked or not.
+
+2. Traverse the matrix and store the position of the zeroes in an array of pairs.
+
+3. Then we traverse the vector, and for each element, if the element is a zero, we add its row and column position
+as a pair in the array.
+
+4. Then we traverse the array with the position of zeroes and for each element of the array, we check if columns and
+rows are visited or not.
+
+5. If not visited, we traverse the particular row or column.We check the number of 1s in the column or row and increment
+the count. We also replace the 1 with -1 so we do not count it sgsin.
+
+6. Finally, we return the count.
+
+Time Complexity: O(n^2), where n is the number of rows and columns of the matrix. We need to go through all the elements
+in the matrix, which will take order of n^2 time.
+
+Space Complexity: O(n), where n is the dimension of the matrix. We need two visited arrays to store whether any particular
+row or column is visited or not.
+
+---------------------------
+
+Algorithm:
+We aim to count the number of 1s in the same row or column as any 0 in the matrix while avoiding rechecking rows or columns
+that have already been provessed.
+
+Steps:
+1. Initialise visited arrays:
+   -> Create two boolean arrays, visitedRow and visitedCol, of size n to keeo track of rows and cols already processed.
+
+2. Locate All 0s:
+   -> Traverse the matrix and store the positions of all 0s in a list zeroPositions as pairs of (i, j).
+
+3. Process Rows and Columns:
+   -> For each (i, j) in zeroPositions, check if i (row) or j (column) is already visited:
+      => If not, traverse the row or column:
+         ==> Count the 1s
+         ==> Replace each 1 with -1 to prevent reprocessing.
+      => Mark the row or column.
+
+4. Return the count:
+   -> After processing all rows and columns corresponding to 0s, return the total count of 1s.
