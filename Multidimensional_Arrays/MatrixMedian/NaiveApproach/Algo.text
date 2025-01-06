@@ -1,0 +1,24 @@
+Since the median is the middle number in a sorted -- ascending or descending --list of numbers, our basic 
+approach is to generate the list of integers from the given matrix in a sorted manner.
+
+1. Create an auxiliary array/list of N*M length.
+2. Traverse the matrix and insert all the elements in that array/list.
+3. Sort the list/array in non-decreasing order.
+4. The element on the ((N*M)/2)th index will be the overall median of the matrix.
+
+Time Complexity: O((N*M)*log(N*M)), where N = number of rows & M = number of cols in the given matrix. Since 
+we are sorting a list/array of integers whose length is N*M, its time complexity will be O(N*M). The overall
+complexity will be O(N*M).
+
+---------------------------
+
+1. Create an empty list aux to store all the elements of the matrix.
+
+2. Traverse the matrix row by row and column by column.
+   -> Append each element of the matrix to the aux list.
+
+3. Sort the aux list in non-decreasing order.
+
+4. Find the middle index as (N*M)//2, where N = Number of rows & M = Number of cols.
+
+5. Return the element at the middle index of the sorted list as the median

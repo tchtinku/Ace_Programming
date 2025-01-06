@@ -1,0 +1,32 @@
+If we look carefully  at the given problem, we observe that to create a rectangle in a grid, we just need to select 
+two horizontal and two vertical lines among all the lines present in the grid.
+
+In a grid with N columns, we know that there are (N+1) vertical lines. Also, in a grid with M rows, there are (M+1)
+horizontal lines (including the outer boundaries).
+
+This grid has 3 rows and 4 columns. Hence, M=3 and N=4. Vertical lines are coloured pink and horizontal lines are
+coloured blue.
+
+As is clearly visible, there are (M+1)=4 horizontal lines and there are (N+1)=5 vertical lines. Now, to select two horizontal
+lines out of 4, there are 4C2 = 6 ways. Similarly, to select two vertical lines out of 5, there are 5C2 = 10 ways.
+
+The total number of ways to select two vertical and two horizontal lines out of five vertical and four horizontal
+lines is  = (6*10) = 60. Hence, there are a total of 60 rectangles in the given grid. 
+
+Our formula becomes --> (M+1)C2 * (N+1)C2, where nCr is defined as the total number of unique ways to choose
+r objects from a set containing n different objects.
+
+On simplification, this formula evaluates to --> (M*(M+1)*N*(N+1))/4. We can directly use this formula to get the total
+number of rectangles in a given grid with M rows and N columns.
+
+Time Complexity: O(1), as all operations will be executed in constant time.
+
+Space Complexity: O(1), as we are using constant extra memory.
+
+-----------------
+
+1. Take input values for the number of rows (M) and columns (N).
+
+2. Use the formula (M * (M + 1) * N * (N + 1)) / 4 to calculate the total number of rectangles in the grid.
+
+3. Return the calculated value as the total number of rectangles

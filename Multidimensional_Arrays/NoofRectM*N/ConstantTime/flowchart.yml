@@ -1,0 +1,20 @@
+Start
+  |
+Input the values of M (rows) and N (columns)
+  |
+Calculate the number of rectangles using the formula:
+  (M⋅(M+1)⋅N⋅(N+1))/4
+  |
+Output the result
+  |
+End
+
+--------------------
+
+Example
+
+Input1: Enter the number of rows (M): 3
+Enter the number of cols (N): 4
+
+Output 1: 
+The total number of a rectangles in a grid with 3 rows and 4 cols is: 60

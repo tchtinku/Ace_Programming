@@ -1,54 +1,28 @@
-Flowchart: Rotate Each Row of a matrix by K steps
-
-start
-  |
-Take input: matrix (N*M) and K (Number of rotations)
-  |
-Set K = K%M (to handle cases where K>M)
-  |
+Start
+ |
+ v
+Take input: matrix (N x M) and K (number of rotations)
+ |
+ v
+Set K = K % M (to handle cases where K > M)
+ |
+ v
 For each row in matrix:
-    |
-    Reverse the entire row
-    |
-    Reverse the first K elements
-    |
-    Reverse the remaining M-K elements
-  |
+   |
+   v
+   Reverse the entire row
+   |
+   v
+   Reverse the first K elements
+   |
+   v
+   Reverse the remaining M-K elements
+ |
+ v
 Append rotated rows to the result matrix
-  |
-Print the rotated matrix 
-  |
+ |
+ v
+Print the rotated matrix
+ |
+ v
 End
-
-------------------------------------
-
-Example 1
-Input 1:
-Enter the number of rows: 3
-Enter the number of cols: 6
-Enter the elements of the matrix row by row: 
-1 2 3 4 5  6
-7 8 9 10 11 12
-13 14 15 16 17 18
-Enter the number of rotations: 2
-
-Output 1:
-Rotated Matrix
-5 6 1 2 3 4 
-11 12 7 8 9 10
-17 18 13 14 15 16
-
----------
-
-Example 2
-Input 2:
-Enter the number of rows: 2
-Enter the number of cols: 4
-Enter the elements of the matrix row by row: 
-1 2 3 4 
-5 6 7 8
-Enter the number of rotations: 5
-
-Output 1:
-4 1 2 3
-8 5 6 7

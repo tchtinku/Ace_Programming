@@ -3,7 +3,7 @@ def rotate_row(row, k):
     Rotates a single row of the matrix by k steps to the right.
     """
     n = len(row)
-    k = k%n # Handle cases where k > n
+    k = k % n  # Handle cases where k > n
     # Reverse the entire row
     row.reverse()
     # Reverse the first k elements
@@ -15,14 +15,13 @@ def rotate_row(row, k):
 def rotate_matrix_rows(matrix, k):
     """
     Rotates each row of the matrix by k steps to the right.
-    
+
     Parameters:
     matrix (list of lists): The input matrix to rotate.
-    k(int): Number of steps to rotate each row to the right.
-    
+    k (int): Number of steps to rotate each row to the right.
+
     Returns:
     list of lists: The rotated matrix.
-    
     """
     rotated_matrix = []
     for row in matrix:
@@ -34,11 +33,11 @@ def take_input():
     Take input for the matrix and the number of rotations.
     
     Returns:
-    tuple: The matrix and the number of rotations
+    tuple: The matrix and the number of rotations.
     """
     n = int(input("Enter the number of rows: "))
-    m = int(input("Enter number of columns: "))
-    print("Enter the elements of the matrix row by row: ")
+    m = int(input("Enter the number of columns: "))
+    print("Enter the elements of the matrix row by row:")
     matrix = []
     for _ in range(n):
         row = list(map(int, input().split()))
@@ -55,6 +54,6 @@ def main():
     print("Rotated Matrix:")
     for row in result:
         print(" ".join(map(str, row)))
-        
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()
