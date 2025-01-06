@@ -1,35 +1,9 @@
-1. Run a loop for each column  -  that is, iterate through each column.
-2.  Using binary search on each row, find if the element exists in the current row. Binary Search is done because 
-each row is sorted.
-    -> If the middle element is equal to the target element, returm its position.
-    -> If the middle element is greater than the target element, decrease the right pointer. Otherwise, increase the left pointer.
-3. If the element is not found in the entire matrix, return {-1, -1}.
+The basic idea of this approach is to utilise the fact that elements in the row already stored in a sorted manner.
 
-Time Complexity: O(N*logN), since we traverse through all the rows and apply binary search on it.
+Suppose we want to create a sorted (in non-decreasing order) list of integers from the given matrix. Now let's
+try to append the integers in the list one by one. Consider the 1st element of each row. The minimum of 
+those elements will be the minimum element of the matrix itself. Why? Because the 1st element of each row 
+is the min element of that row.
 
-Space Complexity: O(1), as only a constant space is required in the worst case.
-
-----------------------
-
-algorithm: Search an element in a sorted 2D matrix using binary search
-
-Steps:
-1. Understand the Input:
-   -> Each row of the matrix is sorted in ascending order.
-   -> Use binary search on each row to find the target element.
-
-2. Traverse through Columns:
-   -> Iterate over each row of the matrix.
-
-3. Apply Binary Search:
-   -> For each row:
-      => Initialize pointers: left=0, right = len(row)-1.
-      => while left <= right:
-           ==> Compute the middle index: mid = (left + right) // 2.
-           ==> Compute the middle element with the target.
-               ===> If matrix[row][mid] == target, return the position (row, mid).
-               ===> If matrix[row][mid] > target, move the right pointer to mid - 1.
-               ===> Otherwise, move the left pointer to mid + 1
-
-4. Return Result
-   -> If no element matches the target, return {-1, -1}
+To find the second element, we will remove the smallest element, and we will consider the next element (2nd element)
+of the row 
