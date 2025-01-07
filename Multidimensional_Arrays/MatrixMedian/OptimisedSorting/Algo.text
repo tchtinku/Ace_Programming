@@ -6,4 +6,66 @@ those elements will be the minimum element of the matrix itself. Why? Because th
 is the min element of that row.
 
 To find the second element, we will remove the smallest element, and we will consider the next element (2nd element)
-of the row 
+of the row where the minimum element was found. Following the steps mentioned above, we can easily find the
+sorted list of integers
+
+2   6 8     |2|  6 8     6   8        |6|  8         8
+|1| 4 7  -> 4    7    -> |4| 7    ->   7        ->   7
+6   8 9     6    8 9     6   8  9      6   8 9       |6|  8  9
+step 1      step 2        step 3        step 4        step 5
+
+The above image explains the first five steps of the algorithm. The highlighted element is the minimum
+element of the matrix in each step. We can observe that we just need to consider elements of the first column to
+find the minimum. Therefore, we can use a min-heap data structure to operate efficiently.
+
+Since the median is always the middle element in the sorted list, we simply do the above operation for  (N*M)/2 
+times. And then, the next element will be the median.
+
+Steps
+
+1. Create a min-heap that stores a pair <x, <row, col>>, where x is the element of the given matrix and
+<row, col> is the index of that element in the matrix. The reason behind storing the index of that element is that
+after removing that element, we will have to consider the next element from the same row for finding the next smallest
+element.
+
+2. Initialise a count variable to zero which stores the number of elements that were removed from the min-heap.
+
+3. Extract the minimum element from the min-heap and increment the count.
+
+4. If count is (N*M)/2 + 1, the current minimum element is the overall median of the matrix.
+
+5. Using the index of the minimum element, find the next element in that row and insert the pair of the next element
+and its index in the min-heap.
+
+6. If that row doesn't have any more elements , repeat the process (from step 3).
+
+Time Complexity: O(N*M*log(N)), where N is the number of rows, and M is the number of columns in the given matrix.
+We are using a min-heap to extract the min element. The time complexity of removing a minimum element
+from a min-heap is log(N). Since we will be doing the above operation a maximum of N*M times and in the worst case, there 
+would be a maximum of N elements in the min-heap, the overall time complexity will be O(N*M*log(N)).
+
+Space Complexity: O(N), where N = Number of rows and M = Number of columns in the given matrix. We are using the 
+min-heap, which will store a maximum of N elements. The overall space complexity will be O(N).
+
+--------------------------
+
+1. Input the matrix:
+   -> Read the number of rows (N) and columns (M).
+   -> Take the input matrix, ensuring each row is sorted.
+
+2. Initialize the min-heap:
+   -> Create a min-heap to store tuples of the form (value, row, col), where value is the matrix element, row 
+   is its row index, and col is its column index.
+   -> Push the first element from each row into the heap.
+
+3. Find the median:
+   -> Calculate the position of the median as median_position = (N*M)//2.
+   -> Initialise count variable to zero.
+   -> While count is less than median_position+1:
+      => Extract the minimum element from the heap.
+      => increment the heap.
+      => If count equals median_position + 1, the current minimum element is the median.
+      => Push the next element from the same row into the heap (if it exists)
+
+4. Return the median:
+   -> Output the median value.
