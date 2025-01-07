@@ -1,0 +1,71 @@
+The core idea of this approach is to utilise the property of the median and the sorted rows. Note that
+for a given list of integers whose length is N*M, the median is the smallest number greater than or 
+equal to at least (N*M)/2 elements in the list.
+
+Steps:
+
+Let x be the potential median of the matrix. Now, x can be any number from the matrix. We can do a binary search
+to find the x.
+
+1. Let MIN and MAX be the minimum and maximum element of the matrix, respectively x can be any number in 
+the range of [MIN, MAX].
+
+2. Initialise low and high for the binary search algorithm to MIN and MAX, respectively. In other words, initialise
+our search space to [MIN, MAX].
+
+3. We will iterate until low is not equal to high
+   -> Initialise mid as (low+high)/2.
+   -> Now, our task is to find the number of elements in the matrix that are less than or equal to the mid
+      (say it is count)
+        => Iterate through each row one by one.
+        => Since each row is sorted in non-decreasing order, we can easily find the total number of 
+        elements in that row that are less than or equal to mid using the upper_bound().
+        => Take the sum of each element over each row.
+        => Now, if count is less than or equal to (N*M)/2 then, the median will be undoubtedly greater than
+        mid. Therefore, change our search space to [mid+1,high] -- that is, assign mid+1 to low.
+        => Else, the median will indeed lie in the range of [low, mid] -- that is, assign mid to high.
+        => Repeat this process while our search space doesn't converge to a single element.
+
+4. Since the steps mentioned above will terminate when low is equal to high, we will get the overall 
+median of the matrix which is low.
+
+Time Complexity: O(N*log(M)*log(MAX-MIN)), where N = Number of rows & M = Number of cols in the given matrix. 
+And MAX and MIN are the minimum and maximum element of the matrix, respectively. At each iteration of the
+outer loop (which runs until low is equal to high), we are iterating through every row and doing a binary 
+search on it. Since there are M elements in each row, the upper_bound() function will take O(log(M)) time.
+And we'll be doing N number of such operations in each iteration. Therefore, it will take O(N*log(M)) time 
+for each iteration. 
+
+And the outer loop which is again a binary search, will run for (log(MAX-MIN)) time. Therefore,
+the overall time complexity will be O(N*log(M)*log(MAX-MIN)).
+
+Space Complexity: O(1). Since we are not using any extra space, we are only doing the binary search. So, the overall
+space complexity will be O(1).
+
+-------------------------------
+
+Input: A matrix with N rows and M cols where each row is sorted in non-decreasing order.
+Output: The median of the matrix
+
+Steps:
+
+1. Input the matrix:
+   -> Read the number of rows(N) and columns (M)
+   -> Take the input matrix where each row is sorted.
+
+2. Initialise the variables:
+   -> Set MIN to the smallest element of the matrix (first element of the first row)
+   -> Set MAX to the largest element of the matrix (last element of the last row.)
+
+3. Binary Search:
+   -> Initialise low=MIN and high=MAX
+   -> While low < high:
+       => Calculate mid = (low+high) // 2
+       => Compute the number of elements less than or equal to mid:
+          ==> Iterate through each row.
+          ==> Use binary search (upper_bound) to find the count of elements in the row less than or equal to mid.
+       => If the count is less than or equal to (N*M)//2, adjust the search space to [mid+1, high]
+       => Otherwise, adjust the search space to [low, mid]
+
+4. Return the median
+   -> When the binary search loop ends, the value of low will be median.
