@@ -1,0 +1,44 @@
+We will create a matrix of size N*N and initialise all of its elements with a number say -1. For every
+task (i, j), we will replace -1 with 0 for every cell of the ith row and jth column.
+
+Now we will simply count the number of -1 in the matrix using two loops and print it.
+
+Steps:
+
+1. Create an integer matrix of size N*N and initialise every cell with -1.
+
+2. Create an integer array of size K, namely outputArray.
+
+3. For every task (i, j),
+   -> Run a loop over the ith row and replace every cell of this row with 0.
+   -> Run a loop over the jth column and replace every cell of this column with 0.
+   -> Count the number of -1 in the matrix and insert it to the outputArray.
+
+4. Return the outputArray 
+
+Time Complexity: O(K*N*N), where N is the number of rows and columns of the matrix, and K is the number of tasks
+
+Space Complexity: O(N*N), where N=Number of rows and columns of the matrix.
+
+--------------
+
+Input:
+
+1. Size of the matrix N*N.
+
+2. Number of tasks K.
+
+3. Tasks, each represented as pair (i, j), where i is the row index and j is the column index.
+
+Output:
+
+An array containing the count of -1 elements in the matrix after each task.
+
+----------------------
+
+1. Input the Matrix:
+   -> Read the size of the matrix N*N
+   -> Initialise a matrix with all elements set to -1.
+
+2. Input the tasks:
+   -> Read K, 
