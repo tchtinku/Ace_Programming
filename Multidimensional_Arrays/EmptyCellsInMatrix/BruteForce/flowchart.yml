@@ -1,0 +1,64 @@
+Start
+ |
+ |-> Input size of matrix (N)
+ |-> Input number of tasks (K)
+ |-> Input task list (i, j) pairs
+ |
+ |-> Initialize N*N matrix with all elements set to -1
+ |-> Initialize output array as empty
+ |
+ |-> For each task (i, j):
+ |     |--> Set all elements in row i to 0
+ |     |--> Set all elements in column j to 0
+ |     |--> Count the number of -1 in the matrix
+ |     |--> Append count to output array
+ |
+ |-> Print the output array
+ |
+End
+
+-------------------------------
+
+Example Input/Output
+
+Input:
+Enter the size of the matrix (N): 3
+Enter the number of tasks (K): 2
+Enter each task as pair (i, j):
+1 1
+0 2
+
+Output:
+Output Array: [4, 0]
+
+------------------------------
+
+Explanation
+
+1. Initial Matrix:
+-1 -1 -1
+-1 -1 -1
+-1 -1 -1
+
+2. After Task (1, 1):
+-> Row 1 becomes 0
+-> Column 1 becomes 0.
+
+-1 0 -1
+ 0 0 0
+-1 0 -1
+
+Count of -1: 4
+
+3. After Task (0, 2):
+  -> Row 0 becomes 0.
+  -> Column 2 becomes 0.
+
+  0 0 0
+  0 0 0
+ -1 0 0 
+
+ Count of -1: 0
+
+4. Final Output: [4, 0]
+
