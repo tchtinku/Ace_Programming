@@ -41,4 +41,18 @@ An array containing the count of -1 elements in the matrix after each task.
    -> Initialise a matrix with all elements set to -1.
 
 2. Input the tasks:
-   -> Read K, 
+   -> Read K, the number of tasks.
+   -> Input each task as a pair (i, j).
+
+3. Process Each Task:
+   -> For each task:
+         => Replace all elements in the i-th row with 0.
+         => Replace all elements in the j-th column with 0.
+
+4. Count -1 values:
+   -> Use two nested loops to count the number of -1 elements in the matrix.
+   -> Append the count to an output array.
+
+5. Return the result:
+   -> Output the array of counts.
+
