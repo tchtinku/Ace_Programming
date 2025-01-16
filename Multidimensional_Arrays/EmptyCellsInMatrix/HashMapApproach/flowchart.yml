@@ -1,0 +1,72 @@
+Start
+  |
+  |--> Input size of matrix (N) and number of tasks (K)
+  |--> Input task list (i, j) pairs
+  |
+  |--> Initialise rows = N, cols = N
+  |--> Initialise rowSet and colSet as empty sets
+  |--> Initialise outputArray as an empty list.
+  |
+  |--> For each task (i, j):
+  |      |--> If i not in rowSets:
+  |      |       Add i to the rowSet
+  |      |       Decrement rows by 1
+  |      |--> If j not in colSet:
+  |      |       Add j to colSet
+  |      |       Decrement cols by 1
+  |      |--> Calculate empty cells = rows * cols
+  |      |--> Append empty cells to outputArray
+  |
+  |
+  |--> Print the outputArray
+  |
+  End
+
+--------------
+
+Example:
+
+Input:
+Enter the size of the matrix (N): 4
+Enter the number of tasks (K): 3
+Enter each task as a pair (i, j):
+1  1
+2  3
+1  3
+
+Output:
+Output Array: [9, 6, 6]
+
+-------------
+
+Explanation:
+
+1. Initial Matrix:
+   N = 4*4, all rows and cols are active.
+
+2. After Task(1, 1):
+   -> Row 1 nd Column 1 are eliminated.
+      Remaining rows = 4-1 = 3, Remaining cols = 4-1 = 3
+      Empty Cells = 3*3
+    
+3. After Task (2, 3):
+   -> Row 2 and Column 3 are eliminated.
+      Remaining rows = 3-1 = 2, Remaining cols = 3-1 = 2
+      Empty Cells = 2*3 = 6
+
+4. After Task (1, 3):
+   -> Row 1 and Column 3 were already eliminated.
+      Remaining rows and cols remain the same.
+      Empty cells = 2*3 = 6
+
+5. Final Output: [9, 6, 6]
+
+
+--------------
+
+
+Efficiency:
+
+Time Complexity: O(K) since each task involves only constant time operations
+
+Space Complexity: O(K) due to the size of rowSet and colSet in the worst case.

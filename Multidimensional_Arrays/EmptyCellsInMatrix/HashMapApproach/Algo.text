@@ -1,0 +1,74 @@
+Suppose we have a task (i, j). We will update ith row and jth column of the matrix by 0. What can we conclude
+from this? We can say that the ith row and jth column will not contribute any empty cells. So we can just
+consider a matrix not having ith row and jth column. This means our number of rows has been reduced by
+one and the number of columns has also been reduced by one.
+
+Steps:
+
+1. Initialise two variables, rows by N and columns by N.
+
+2. Create an integer array of size K namely outputArray.
+
+3. Take two sets, rowSet and colSet, to keep track of the rows and cols we are eliminating.
+
+4. For every task (i, j), repeat the steps from 4 to 6.
+
+5. Check for i
+   a. If i is not present in rowSet, add it to the rowSet and reduce the number of rows by one.
+   b. If i is already present in the rowSet, we don't have to do anything because this row has already
+   been eliminated.
+
+6. Check for j
+   a. If j is not present in colSet, add it to the colSet and reduce the number of columns by one.
+   b. If j is already present in the colSet, we don't have to do anything because this column has 
+      already been eliminated.
+
+7. Now the number of empty cells would be the product of the remaining rows and columns, insert it to the outputArray
+
+8. Return the outputArray.
+
+Time Complexity: O(K), where K is the number of tasks. For each task, we are just checking and updating the set.
+It takes constant time. Thus, the time needed for completing a task is O(1).
+
+As we have K tasks, the total time complexity would be O(K) in the worst case.
+
+Space Complexity: O(K), where K is the number of tasks. We are not creating any matrix. Instead, we are 
+using two maps only. In the worst case, the size of each map can go to K.
+
+-------------------------------
+
+Input:
+
+1. Size of matrix N*N.
+
+2. Number of tasks K.
+
+3. Tasks, each represented as a pair (i, j), where i is the row index and j is the column index.
+
+Output:
+
+An array containing the count of empty cells after each task.
+
+------------
+
+Steps:
+
+1. Initialise Variables:
+   -> Rows and columns are set to N, representing the number of active rows and columns initially
+
+   -> Create two sets, rowSet and colSet, to store eliminated rows and columns.
+
+2. Input Tasks:
+   -> Input K, the number of tasks.
+   -> Input each task as a pair (i, j)
+
+3. Process Each Task:
+   -> Check if row i is in rowSet:
+      => If not, add it to rowSet and reduce the number of rows by one.
+   -> Check if column j is in colSet:
+      => If not, add it to colSet and reduce the number of cols by one.
+   -> Calculate the number of empty cells as the product of remaining rows and columns
+   -> Append this count to the outputArray.
+
+4. Return the Result:
+   -> output the outputArray.

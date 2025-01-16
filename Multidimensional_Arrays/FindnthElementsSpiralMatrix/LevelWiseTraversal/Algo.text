@@ -1,0 +1,48 @@
+While traversing the array in spiral order, a loop is used to traverse the sides. Hence if it can be found 
+out that kth element is present in the given slide, then the kth element can be found out in constant time.
+We can approach this recursively as well as iteratively
+
+Steps:
+
+1. Use two variables startRow = 1 and startCol = 1.
+
+2. Iterate a loop level from 0 to max(n, m). There can be four cases. 
+   a. If (startRow<=k<=m)
+      -> Means kth element is present in the levelth row
+      -> Then we can find the kth element in constant time in this row.
+   b. If (m-level<=k<=n)
+      -> Means kth element is present in (m-level)th column.
+      -> Then we can find the 'kth' element in constant time in this column.
+   c. If ((n-1)*m+1<=k<=n*m)
+      -> Means kth element is present in n row
+      -> Then we can find the kth element in constant time in this row.
+   d. If (startCol - level <= k <= n-1)
+      -> Means kth element is present in startCol - level column
+      -> Then we can find the kth element in constant time in this column
+
+3. If any of the above conditions is true, then find the respective kth element and return else, update
+startCol = startCol + 1, startRow = startRow + 1, n=n-1 and m = m-1 and iterate for the nextLevel.
+
+Time Complexity: O(max(N, M)), where N = number of rows and M = number of columns. We are iterating a loop 
+level max(N, M) times.
+
+Space Complexity: O(1), as we are using constant space.
+
+------------------------
+
+1. Initialize variables:
+   -> Set startRow = 0, startCol = 0
+   -> Iterate until startRow < n and startCol < m
+
+2. Check cases for kth element:
+   -> Case 1: If k is within the top row, return the kth element of that row.
+   -> Case 2: If k is within the right column, return the kth element of that column.
+   -> Case 3:  If k is within the bottom row, return the kth element of that row.
+   -> Case 4: If k is within the left column, return the kth element of that column
+
+3. Update bounds:
+   -> After travelling each side, adjust k by subtracting the number of elements traversed
+   and update bounds for rows (n, startRow) and columns (m, startCol)
+
+4. Return Result:
+   -> If k is valid, return the Result; otherwise, return -1

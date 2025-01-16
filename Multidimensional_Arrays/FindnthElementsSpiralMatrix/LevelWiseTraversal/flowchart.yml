@@ -1,0 +1,18 @@
+Start
+  |
+Input: Read n, m, matrix and k
+  |
+Initialize: startRow = 0, startCol = 0.
+  |
+Condition: While startRow < n and startCol < m :
+  -> Check Case 1 (Top row): If k lies here, return value.
+  -> Check Case 2 (Right Column): If k lies here, return value.
+  -> Check Case 3 (Bottom Row): If k lies here, return value
+  -> Check Case 4 (Left Columns): If k lies here, return value
+  -> Adjust k and bounds (startRow, startCol, n, m)
+  |
+If k is invalid, return -1
+  |
+Output: Print the result
+  |
+End
