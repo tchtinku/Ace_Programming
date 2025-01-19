@@ -1,0 +1,65 @@
+For this method, we keep in mind the following.
+
+1. In the case of left rotation of the string, reverse the substring of length D starting from the beginning.
+Then reverse the substring of length N-D, starting from (D-1)th index. Now finally, rotate the 
+whole string. The result we get is the required string after left rotation.
+
+2. In the case of right Rotation, it's the same as the left rotation. The difference is that we reverse the
+substring of length N-D from the beginning.Hence, rotating a string by 2 units in the left direction is the
+same as rotating the string by N-2 units in the right direction.
+
+Explanation with an example:
+
+Let the given string is "abcdef" and D=2
+
+1. In left rotation "bacdef" --> "bafedc" --> "cdefab"
+
+2. In right rotation: LeftRotate(string,4) --> "dcbaef" --> "efabcd"
+
+from the above example, it is clear that rotating the string in the left direction by 2 units is the same as 
+rotating the string by N-2 units in the right direction, where N-2 = 6-2 = 4
+
+Visualisation for Left Rotation:
+                   D Elements                          N-D Elements
+   step 1:        a b                                  c d e f 
+   step 2:        b a                                  f e d c
+   step 3:        b a f e d c   
+   Output:        c d e f a b
+
+
+Visualisation for Right Rotation
+                  N-D Elements                  D Elements
+    step 1:       a b c d                       e f
+    step 2:       d c b a                       f e
+    step 3:       d c b a f e
+    Output:       e f a b c d
+
+Time Complexity: O(N), where N = length of the string. In the worst case, to reverse the string, you need
+to reverse the whole string.
+
+Space Complexity: O(1), as only constant extra space is required when we reverse the string in-place in the 
+worst case.
+
+---------------------
+
+1. Input
+   -> A string s
+   -> Integer D (number of rotations)
+
+2. Reversal Function:
+   -> Define a helper Function reverse_string that reverses a substring of the string from index start 
+   to end
+
+3. Left Rotation:
+   -> Reverse the first D characters of the string.
+   -> Reverse the next N-D characters of the string.
+   -> Reverse the entire string.
+   -> Print the result.
+
+4. Right rotation:
+   -> Compute N-D for right rotation.
+   -> Use the same left rotation logic, but start by reversing the first N-D characters.
+   -> Print the result.
+
+5. Output:
+   -> Print the left and right rotated strings

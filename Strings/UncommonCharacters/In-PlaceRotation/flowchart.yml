@@ -1,0 +1,38 @@
+Start
+  |
+Input: -> A string s
+       -> Number of rotations D.
+ |
+Reversal Functions: Define a function reverse_string to reverse a substring of the string.
+ |
+Left Rotation 
+ |
+ |-> Reverse the first D characters
+ |-> Reverse the next N-D characters 
+ |-> Reverse the entire string
+ |-> Print the result
+ |
+Right Rotation
+ |
+ |-> Compute N-D (effective left rotation)
+ |-> Use the same steps as left rotation for N-D
+ |-> Print the result
+ |
+Output
+ |
+End
+
+-----------------
+
+
+Input:
+
+Enter the string: abcdef
+Enter the number of rotations (D): 2
+
+Output:
+c
+
+Performing rotations ....
+Left rotated string: cdefab
+Right rotated string: efabcd
