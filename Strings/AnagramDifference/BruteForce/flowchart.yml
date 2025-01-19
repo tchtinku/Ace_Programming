@@ -1,0 +1,49 @@
+Start
+  |
+Input: Two strings str1 & str2
+  |
+Validation:
+  If the lengths of str1 and str2 are not equal, print an error and exit 
+  |
+Initialize:
+  -> Set minAnagramDiff = 0
+  -> Convert str2 into a mutable list
+  |
+Iterate through str1:
+  -> For each character in str1, check if it exists in str2:
+     => If found:
+          ==> Replace the first occurrence in str2 with '#'
+     => If not found:
+          ==> Increment minAnagramDiff by 1
+
+  |
+Output: Print minAnagramDiff as the result
+  |
+End
+
+----------------------------------
+
+Example Execution
+
+Input:
+Enter the first string: listen
+Enter the second string: silent
+
+Output:
+Minimum number of changes to make the strings anagrams: 0
+
+-------------------------------------
+
+
+Explanation
+
+For strings listen & silent
+
+-> Each character in listen is found in silent
+-> No characters need to be changed, so minAnagramDiff = 0.
+
+For strings abcd and bcde
+
+-> a in abcd is not found in bcde.
+-> e in bcde is not found in abcd.
+-> Minimum changes = 2

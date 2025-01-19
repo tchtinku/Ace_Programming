@@ -1,0 +1,44 @@
+The straightforward intuition is to loop over all characters in any one given string and search for each character 
+in the other string. If the character of the first string exists in the second string, then change it to
+'#' so that we do not include this character again. If the character does not exist, then increment the 
+count.
+
+Steps:
+
+1. Iterate over all characters of str1 and search it into str2
+
+2. For any ith character, if str1[i] exists in str2, then make str2[j] to '#', where j is the index of str2
+at which str1[i] is found. Remember that we need to change only the first occurrence of the character to
+'#', not all the occurrences.
+
+3. Otherwise, increment the count of anagram difference. Let's name it as minAnagramDiff. This represents
+the number of changes that need to be made in order to make str1 and str2 anagrams of each other. Maintaining the difference
+would do the trick, as we can change either of the strings to achieve our goal.
+
+4. Return the minAnagramDiff
+
+Time Complexity: O(N^2), where N = length of the given string. Since we will check every character of
+str1 and check whether the current character exists into str2 or not, the worst character happens
+when none of the characters of string str1 exist into str2. In this case, if there are N 
+character of str1, we will be spending N time to search into str2. Therefore the overall Complexity will be 
+O(N^2)
+
+Space Complexity: O(1), we are not using any extra space. Therefore, space Complexity will be constant.
+
+----------------------------------------------------------------------------------------------------------
+
+1. Input:
+    -> Two strings str1 and str2
+
+2. Logic:
+   -> Initialize a variable minAnagramDiff to 0.
+   -> Iterate through each character of str1:
+      => search for the character in str2
+      => If the character is found:
+            ==> Replace the first occurrence of the character in str2 with #
+      => Else:
+            ==> increment minAnagramDiff by 1
+   -> Return minAnagramDiff as the final result
+
+3. Output:
+   Print the number of changes required to make str1 and str2 anagrams of each other.
