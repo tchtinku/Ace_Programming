@@ -1,0 +1,54 @@
+The idea is to use an additional string to store the copies of required substrigs. Hence we will initialise an 
+empty string named ans.
+
+Steps:
+
+1. For the left rotation of the given string, append the last N-D characters to ans, then append the remaining
+first D characters to the ans. The string ans after the left rotation is th required string. Print the 
+current state of ans.
+
+2. For the right rotation, again initialise ans with an empty string (i.e ans="") and append the last D 
+characters of the given string to the ans, then append the remaining N-D characters of the given string from
+beginning to the ans. The string ans after the right rotation is the required string.
+Print the current state of ans.
+
+Explanation with an example:
+Let the given string be abcdef and D=2
+   Initialize ans = "" for left rotation:
+ 
+   1. ans = ""+"cdef" = "cdef"
+   2. ans = "cdef"+"ab" = "cdefab"
+
+   For right rotation again initialise ans to empty:
+
+   1. ans = ""+"ef" = "ef"
+   2. ans = "ef"+"abcd" = "efabcd"
+
+Time Complexity: O(N), where N = length of the string. In the worst case, we have to traverse the whole
+string in each rotation.
+
+Space Complexity: O(N), where N is the length of th string. In the worst case, the temporary string
+variable used to store the string after rotation would be equal to the length of the string.
+
+-----------------------------------------------
+
+1. Input:
+   -> A string s
+   -> Integer D (number of rotations).
+
+2. Initialize variables:
+   -> ans = "" for storing the rotated string.
+
+3. Left Rotation:
+   -> append the substring from index D to the end of string to ans
+   -> append the substring from index 0 to D to ans.
+   -> Print the current state of ans.
+
+4. Right Rotation:
+   -> Reinitialize ans = ""
+   -> Append the substring from index len(s)-D to the end of the string to ans.
+   -> Append the substring from index 0 to len(s)-D to ans.
+   -> Print the current state of ans.
+
+5. Output:
+   -> Print left and right rotated strings

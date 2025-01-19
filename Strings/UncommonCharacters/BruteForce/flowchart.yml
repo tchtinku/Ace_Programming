@@ -1,0 +1,38 @@
+Start
+  |
+Input the string s and the number of rotations D.
+  |
+Left Rotations:
+  |
+  |-> Compute D = D % len(s)
+  |-> Append the substring from index D to the end of the string to ans 
+  |-> Append the substring from index 0 to D to ans
+  |-> Print the left rotated string
+  |
+Right Rotation
+  |
+  |-> Compute D = D % len(s)
+  |-> Append the substring from index len(s)-D to the end of the string to ans 
+  |-> Append the substring from index 0 to len(s)-D to ans
+  |-> Print the right rotated string
+  |
+Output the results
+  |
+End
+
+---------------
+
+Eample Execution
+
+Input:
+
+Enter the string: abcdef
+Enter the number of rotations (D): 2
+
+Output:
+
+c
+
+Performing rotations
+Left rotated string: cdefab
+Right rotated string: efabcd
