@@ -1,0 +1,66 @@
+The basic is to start traversing the matrix in spiral form and find the kth element in the traversal.
+
+Steps:
+
+1. We traverse the matrix in spiral form. (refer to the image in the problem statement)
+
+2. Keep two variabkes startRow = 0, startCol=0, n and m are already ending indices of row and column.
+
+3. Keep a variable count = 0, if (k==count), we return.
+
+4. Start iterating i from startCol to m-1 for the first row and keep incrementing count for every element visited.
+
+     for any i if (count == k), return 'matrix[startRow][i]'
+
+5. Update startRow = startRow + 1.
+
+6. Then iterate i from startRow to n-1 for the last column and keep incrementing count for every element visited.
+
+   for any i if (count==k), return matrix[n-1][i]
+
+7. Update m = m-1.
+
+8. Then iterate i from m-1 to startCol with -1 jumps and keep incrementing count for every element visited.
+We are iterating the last row from right to left.
+
+     For any i if (count==k), return matrix[n-1][i]
+
+9. Update n = n-1
+
+10. Then iterate i from n-1 to 'startRow' with -1 jumps and keep incrementing count for every element visited. 
+We are iterating the first column from bottom to top.
+   
+   For any i if (count==l), return matrix[i][startCol]
+
+11. Update startCol = startCol + 1
+
+12. Repeat the same step until count is not equal to the k.
+
+In other words, keep iterating the matrix from left to right for the row marked by startRow, followed 
+by top to bottom for the column marked by m, followed by right to left for the row marked by n, followed 
+by bottom to top for the column marked  by startCol, and keep incrementing the value of count by 1 until we get 
+count to be equal to k.
+
+Time Complexity: O(N*M), where N=number of rows and M=number of cols. We are iterating every element
+of the matrix.
+
+Space Complexity: O(1), as we are using constant space.
+
+------------------------------------
+
+1. Initialize variables:
+   -> Set startRow = 0, startCol = 0.
+   -> Iterate until startRow < n and startCol < m.
+
+2. Check cases for kth element:
+   -> Case 1: If k is within the top row, return kth element of that row.
+   -> Case 2: If k is within the right column, return the kth element of that column.
+   -> Case 3: If k is within the bottom row, return the kth element of that row.
+   -> Case 4: If k is within the left column, return the kth element of that column.
+
+3. Update bounds:
+   -> After traversing each side, adjust k by subtracting the number of elements traversed and update 
+   bounds for rows (n, startRow) and columns (m, startCol).
+
+4. Return result:
+   -> If k is valid, return the result; otherwise, return -1.  

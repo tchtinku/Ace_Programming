@@ -1,0 +1,16 @@
+1. Start
+2. Input the number of rows (n), columns (m) and the matrix elements.
+3. Input the value of k.
+4. Initialize startRow = 0, startCol = 0, count = 0
+5. While startRow < n an startCol < m:
+     -> Traverse the startRow from startCol to m - 1. Check if count == k, return element.
+     -> Update startRow += 1
+     -> Traverse the last column from startRow to n-1. Check if count==k, return element.
+     -> Update m-=1
+     -> Traverse the last row from m-1 to startCol. Check if count==k, return element.
+     -> Update n-=1
+     -> Traverse the first column from n-1 to startRow. Check if count==k, return element.
+     -> Update startCol += 1
+6. End While
+7. If no element matches the k-th position, print "k is out of range"
+8. End
