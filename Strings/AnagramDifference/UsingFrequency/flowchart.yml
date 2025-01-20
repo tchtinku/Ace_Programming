@@ -1,0 +1,47 @@
+1. Start
+2. Input:
+   -> Take 2 strings str1 and str2 
+
+3. Validation:
+   -> Check if the lengths of str1 and str2 are equal:
+      => If not, print an error and exit
+
+4. Initialize:
+   -> Create an array freq of size 26, initialized to 0
+
+5. Process:
+   -> For each character in str1, increment the corresponding index in freq.
+   -> For each character in str2, decrement the corresponding index in freq.
+
+6. Calculate:
+   -> Compute freqDiff as the sum of the absolute values of all elements in freq.
+   -> Calculate the result as freqDiff//2
+
+7. Output:
+   -> Print the result as the minimum manipulations required.
+
+8. End
+
+---------------------------------
+
+
+Example Execution
+
+Input:
+
+Enter the first string: except
+Enter the second string: accept
+
+Minimum manipulations required to make the strings anagrams: 2
+
+--------------
+
+Explanation
+
+For strings except and accept
+
+-> Frequencies of characters in except: [1, 0, 2, 0, 1, 0, ..., 0]
+-> Frequencies of characters in accept: [1, 0, 2, 0, 0, 1, ..., 0]
+-> Absolute frequency differences: [0, 0, 0, 0, 1, 1, ..., 0]
+-> freqDiff = 4
+-> Minimum manipulations = freqDiff // 2 = 4 // 2 = 2

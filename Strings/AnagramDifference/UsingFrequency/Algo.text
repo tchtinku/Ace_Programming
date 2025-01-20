@@ -1,0 +1,65 @@
+The intuition is behind this approach is that we will first store the frequency of any one string, and then
+we go for each character in the other string, and we decrease the frequency by one.
+
+Let's say we have stored the frequencies into freq, where freq is the array of length 26, and initially
+freq contains zero for all characters. We will iterate over all characters of the other string and
+decrease the frequency by one corresponding to stored frequencies of that character.
+
+In the end, we have the difference in frequencies between the first string and the second string into 
+the freq array.
+
+Then, we will store the sum of absolute frequencies difference from freq. Now, we may change half of the 
+mismatched characters of the first string to the required characters for the second string and half of 
+the mismatched characters of the second string to the required characters for the first string.
+Doing so, they become anagrams.
+
+Steps:
+
+1. Take an array of size 26 to store the frequencies of characters, initially let it contain 0 for every 
+element. Let's call it freq.
+
+2. Iterate over all characters of the first string -- that is, str1 and store the frequencies of characters
+
+3. Iterate over all characters of the second string and decrease the frequency of characters from freq.
+
+4. Now calculate the sum of absolute frequency of all 26 characters. Let's call freqDiff.
+
+5. The minimum number of manipulations needed to make the strings anagram will be (freqDiff/2) because we
+can change half the mismatched character from str1 to the required characters for str2, or we can 
+change half of the mismatched characters from str2 to the required characters for str1
+
+To understand this better, let us take the following example:
+
+                  str1 = except
+                  str2 = accept
+
+Let us calculate the freqDiff for these two strings. As we can see, there are 4 characters different in these 
+two strings ({e, x} in str1 and {a, c} in str2). Hence, the freqDiff is equal to 4. Now, we can either 
+change e, x to a, c in str1 or a, c to e, x in str2. Therefore our answer is freqDiff/2, which is 4/2 = 2
+
+
+Time Complexity: O(N), where N is the length of the string in str1.
+
+We are storing the frequencies of N elements into an array and also decreasing the frequencies by the character
+of the second string, which takes constant time for the array. Therefore the overall time Complexity will
+be O(N) 
+
+--------------------------------------------------------
+
+1. Input:
+   -> Two strings str1 and str2.
+
+2. Validation:
+   -> Ensure both strings have the same length; Otherwise return an error.
+
+3. Logic:
+   -> Initialize an array freq of size 26 to store the frequencies of characters (all initialized to 0).
+   -> Iterate over each character in str1:
+      => increment the frequency in freq corresponding to the character.
+   -> Iterate over each character in str2:
+      => Decrement the frequency in freq corresponding to the character.
+   -> Calculate the sum of the absolute values of freq and store it in freqDiff.
+   -> Compute the result as freqDiff//2
+
+4. Output:
+   -> Print the minimum number of manipulations required to make str1 and str2 anagrams
