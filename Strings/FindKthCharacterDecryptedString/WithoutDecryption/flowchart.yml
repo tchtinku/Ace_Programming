@@ -1,0 +1,26 @@
+1. Start
+   -> Input the encrypted string S and the integer K
+
+2. Initialize variables
+   -> Set i = 0 (iterator index)
+
+3. Substring Extraction
+   -> Extract the alphabetic characters (substring) until a digit is found.
+
+4. Frequency Calculation
+   -> Extract numeric characters and compute the frequency using freq = freq*10 + int(S[i])
+
+5. Resultant Length Calculation
+   -> Calculate result_length = len(substring)*freq
+
+6. Kth Character Check
+   -> If K <= result_length, compute the characters at (K-1) % len(substring) and return it.
+
+7. Update K
+   -> If not, substract result_length from K and continue with the next substring
+
+8. Repeat 
+   -> Loop through the process until K is located or the string ends.
+
+9. End
+   -> Print the result  

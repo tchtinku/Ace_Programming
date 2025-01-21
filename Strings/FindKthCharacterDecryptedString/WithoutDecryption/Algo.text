@@ -1,0 +1,50 @@
+We will iterate through Encrypted string S and will keep track of length passed in decrypted string.
+
+1. Find the length of the  substring (substringLength) by traversing the string until no digit is found.
+
+2. Next, find the frequency of the preceding substring by traversing the string until no lowercase alphabet
+is found. We can use this relation to create the integer frequency from the string:
+              freqOfSubstring = freqOfSubstring*10 + (S[j]-'0')
+
+3. Find the length of the resultant string in the decrypted string.
+               resultLength = freqOfSubstring*substringLength
+
+    For example, the resultLength for substring 'cd23' in the string "cd23b4" will be 46
+
+4. If the resultLength of the repeated substring is less than K, then the required character is present
+in some later substring.
+
+5. Subtract the resultantLength of the repeated substring from K to keep the number of characters required
+to be visited.
+                K = K - resultantLength
+
+   For example, if K was 48, our new K would be 48-46 = 2. This means the Kth character we are looking for 
+   lies on the 2nd index of the string after 'cd23' which is 'b4'. Thus, we will repeat our entire process
+   for 'b4'.
+
+6. If the length of repeated substring is greater than or equal to K, the required character liea in the current
+   substring, return the (K-1) % substringLength character from the current substring.
+
+7. We will keep repeating the above process until we reach our Kth character.
+
+Time Complexity: O(N), where N is the length of encrypted string S
+
+Space Complexity: O(1), as we are not create any decrypted string and just keeping the length of string and 
+substring in constant space.
+
+
+----------------
+
+1. Initialize variables for substring, its length, and its frequency.
+
+2. Iterate through the encrypted string.
+
+3. Determine the substring and its frequency.
+
+4. Calculate the resultant length of the repeated substring.
+
+5. Check if K is within the resultant length:
+   a. If yes, return the Kth character
+   b. Otherwise, Subtract the resultant length from K and continue.
+
+6. Repeat until the Kth character is found.
