@@ -1,0 +1,33 @@
+Start
+  |
+Input S (encrypted string) and K
+  |
+Initialize decrypted_string as an empty string and i=0
+  |
+While i < len(S):
+    -> Extract the substring (lowercase alphabets)
+    -> Extract the frequency (digits following the substring).
+    -> Append the substring repeated freq_of_substring times to decrypted_string
+    -> If length of decrypted_string exceeds K, break
+  |
+Return the (K-1)th  character of decrypted_string
+  |
+End
+
+--------------------
+
+Example
+
+Input:
+Enter the encrypted string: ab2c3
+Enter the value of K: 5
+
+Output:
+The 5-th character is: c
+
+---------------------
+
+Explanation
+
+-> Decompressed string: ababccc
+-> The 5-th character is c
