@@ -1,0 +1,49 @@
+The problem boils down to counting distinct characters present in the string and then finding the minimum
+length substring that contains these many distinct characters at least once. We can check all substrings
+by two nested loops and maintain a count of distinct characters for each substring with the help of a 
+hashmap. We process this substring whenever the count of distinct characters in the given string. We will choose 
+the minimum length substring out of all these substrings
+
+Steps
+
+1. Store all distinct characters of the  string in a hashmap.
+
+2. Take a variable count and initialise it with value zero.
+
+3. Generate the substrings by using two pointers.
+
+4. Now check whether generated substring is valid or not:
+   -> If we find that the character of the substring generated has not been encountered before, increment count by 1.
+   -> We can use a visited array of maximum chars size to find whether the current character has been encountered before or not.
+   -> If count is equal to the size of the hashmap, the substring generated is valid.
+   -> If it is a valid substring, compare it with the minimum length substring already generated.
+
+Time Complexity: O(N^2), where N is the length of the string. We will run two nested loops for checking all
+the N*(N+1)/2 substrings of the given string and hashmap operations take constant space time.
+
+Space Complexity: O(K), where K is the number of distinct characters in the string. We are using two hashmaps
+and their size will not exceed the count of distinct characters in the string.
+
+-------------------------------------------------------
+
+1. Identify distinct characters:
+   -> Use a set to find all distinct characters in the string.
+   -> ount the number of distinct characters.
+
+2. Iterate through substrings:
+   -> Use two pointers (i and j) to generate all substrings starting from index i
+   -> Use a Counter to keep track of the frequency of characters in the current substring.
+
+3. Validate substring:
+   -> If a character is encountered for the first time, increment a count variable.
+   -> If count equals the total number of distinct characters, the current substring is valid.
+
+4. Update Minimum length:
+   -> If the valid substring is shorter than the previously stored minimum length, update the result and its 
+   length.
+
+5. Repeat all starting points:
+   -> Move the starting pointer i to evaluate other substrings.
+
+6. Return the result.
+   -> Print the shortest substring and its length.  

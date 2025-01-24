@@ -1,0 +1,22 @@
+Start
+  |
+Input String s
+  |
+Count distinct characters using a set
+  |
+Initialize min_length to infinity and result to an empty string
+  |
+Iterate i from 0 to n - 1 (start of substring)
+  |
+  |-> Initialize current_count (Counter) and count = 0
+  |-> For each j from i to n-1 (end of substring)
+  |   +> Increment current_count[s[j]].
+  |   +> If current_count[s[j]] == 1, increment count
+  |   +> If count == total_distinct:
+  |       ++> Calculate substring length
+  |       ++> Update min_length and result if substring is shorter.
+  |       ++> Break Inner Loop
+  | 
+Print the result substring and its length
+  |
+End
