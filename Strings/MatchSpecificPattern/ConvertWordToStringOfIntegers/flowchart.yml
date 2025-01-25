@@ -1,0 +1,18 @@
+Start
+  |
+Input
+  |-> List of words
+  |-> Pattern string
+Generate Hash for Pattern
+  |-> Use the generate_hash function to create a hash for the pattern
+Loop through Words:
+  |-> For each word:
+  |      => If the length doesn't match the pattern 
+  |      => Otherwise, generate its hash and compare to the pattern's hash
+  |      => If they match, add the word to the valid_words list
+  |
+Output
+  |-> Print the list of valid words
+End
+
+

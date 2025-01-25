@@ -1,0 +1,80 @@
+The idea is to generate hashes of each word present in the list and compare this hash value 
+with the hash of the pattern string
+
+-> Firstly, it should be noted that a word can match the pattern only if the length of the word is equal
+to the length of the pattern. Therefore, before generating the hash value, we must compare the
+lengths to check whether they are equal or not to get the answer with ease.
+
+-> Otherwise, if the hash value of the pattern and the word matches, it tells us that the pattern
+and the word have the same structure -- that is, it's a valid word.
+
+How do we generate a hash for a given word or pattern?
+
+-> A simple way to generate the hash would be to assign a unique integer to every distinct
+character in the word (and pattern) one by one, thereby generating a string of integers. This 
+string of integers acts as a hash value for the word (or pattern).
+
+-> If the hash value of the word matches with the pattern, the word is added to the list of valid words.
+Hence we can use this check for the similarity between the word and pattern.
+
+Let us understand this by an example
+
+Let the word be "aabaddeeecf" and the pattern be "ppqpsstttvu"
+
+Generating the string of integers (hash) for the word:
+
+a -> 1
+b -> 2
+d -> 3
+e -> 4
+c -> 5
+f -> 6
+
+Hash for the word: 11213344456
+
+Generating the string of integers (hash) for the pattern
+
+p -> 1
+q -> 2
+s -> 3
+t -> 4
+v -> 5
+u -> 6
+
+Hash for the pattern: 11213344456
+
+As hashes for word and pattern match each other, the word is a valid match.
+
+Time omplexity: O(N*length(pattern)), where N is the number of words in the list. In the worst case, we convert every 
+word (including pattern) to a string of integers. This gives us the complexity as O(N*max(length of all provided strings)).
+We can optimise it by checking if the length of the pattern is equal to the length of the word.
+
+Space Complexity: O(length(pattern)). In the worst case, extra space is required by the map and 
+the string of integers.
+
+--------------------
+
+1. Input and Preparation
+   -> Take a list of words and a pattern string as Input.
+   -> Initialise an empty list valid_words to store words that match the pattern.
+
+2. Check Lengths:
+   -> Before generating hashes, compare the length of each word with the pattern's length.
+      If they differ, skip the word.
+
+3. Generate Hash Function:
+   -> Create a helper Function generate_hash(word) that maps each distinct character in the 
+      word to a unique integer.
+   -> traverse the word, assigning unique integers to new characters and storing the mapping 
+      in a dictionary
+   -> Construct the hash (a string of integers) based on this mapping.
+
+4. Compare Hashes:
+   -> Generate the hash for the pattern using the helper function.
+   -> For each word in the list:
+        => If the length matches the pattern, generate its hashes and compare it with the 
+        pattern's hash.
+        => If the hashes match, add the word to the valid_words list
+
+5. Return Results:
+   -> Return the list of valid words
