@@ -1,0 +1,71 @@
+The idea is to use two pointers technique with a sliding window of variable length. The current window 
+will be our current processing substring.
+
+-> If count of distinct characters of the current window id equal to that of the given string, it makes no
+sense in expanding the window because the count will only increase by doing so.
+
+-> Similarly, if the count of the distinct characters is less than that of the given string, there is no 
+benefit in shrinking the window.
+
+We will keep track of the minimum length substring obtained so far and only update it when we find a 
+substring of a smaller length.
+
+Steps:
+
+1. Add all the characters of the given string to a hashSet.
+
+2. Initialise distCount to the size of hashSet
+
+3. Initialise start and end pointers to zero, as currently, our window has size one.
+
+4. Initialise count to zero, which will keep track of the number of distinct characters in the current window/substring.
+
+5. Declare a hashmap frequency to store current window characters.
+
+6. Initialise minimumLength to the length of the given string and startIndex to zero.
+
+7. Loop till end < length of the string
+   a. Add s[end] to the window -- that is, increment frequency[s[end]] by one.
+       => If after this frequency[s[end]] == 1, increment 'count' by one.
+
+   b. Shrink window till count is equal to distCount
+       => Update minimumLength and startIndex if the current window is shorter.
+       => Remove s[start] from the window -- that is, decrement frequency[s[start]] by one.
+             If after this frequency[s[start]] == 0, decrement count by one.
+       => Shrink window size -- that is, increment start pointer by one.
+   c. Expand window size -- that is increment end pointer by one.
+
+8. Return minimumLength
+
+Time Complexity: O(N), where N=length of the given string. When all the characters in the string are same,
+we will have our minimum length substring as a single character (size = 1). So, in the worst case, we will
+traverse every character twice, one time with each pointer.
+
+Space Complexity: O(K), where K is the number of distinct characters in the string. We are using two hashmaps
+and their size will not exceed the count of distinct characters in the string.
+
+------------------------------
+1. Identify Distinct characters:
+   -> Use a set to find all distinct characters in the string.
+   -> Store the size of the set as distCount.
+
+2. Initialise variables:
+   -> start, end pointers to 0.
+   -> count to 0 (tracks distinct characters in the current window).
+   -> frequency dictionary to store character frequencies in the current window.
+   -> minLength to the length of the string (as the maximum possible length)
+   -> startIndex to 0 (to track the start of the minimum-length substring)
+
+3. Sliding Window Technique:
+   -> Loop until end < len(string):
+      => Add s[end] to the frequency dictionary and increment its count.
+      => If the frequency of s[end] becomes 1, increment count
+   -> While count == distCount:
+      => Update minLength and startIndex if the current window size is smaller than minLength.
+      => Remove s[start] from the window by decrementing frequency[s[start]]
+      => If frequency[s[start]] becomes 0, decrement count.
+      => Increment start pointer to shrink the window.
+   -> Increment end pointer to expand the window.
+
+4. Return the result:
+   -> Extract the minimum-length substring using startIndex and minLength

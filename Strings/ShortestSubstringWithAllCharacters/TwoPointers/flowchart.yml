@@ -1,0 +1,20 @@
+Start
+  |
+Input string s
+  |
+Find all distinct characters using a set
+  |
+Initialize start, end, count, frequency, minLength, and startIndex
+  |
+While end < len(s):
+  | -> Add s[end] to frequency.
+  | -> If frequency[s[end]] == 1, increment count.
+  | -> While count == distCount:
+  |           => Update minLength and startIndex if the current window is smaller
+  |           => Remove s[start] from frequency.
+  |           => If frequency[s[start]] == 0, decrement count
+  |           => Increment start
+  | -> Increment end.
+Return the substring and its length
+  |
+End 
