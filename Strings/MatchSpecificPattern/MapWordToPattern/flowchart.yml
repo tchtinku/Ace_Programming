@@ -1,0 +1,23 @@
+Start
+  |
+Input
+ -> List of words
+ -> Pattern string
+  |
+Initialize Mappings:
+ -> mapPat and mapWord as empty dictionaries
+  |
+Loop Through Words
+ -> For each word:
+     => If the length is unequal to the pattern, skip the word
+     => For each character in the pattern and word:
+        ==> Case 1: If both characters are unmapped, map them.
+        ==> Case 2: If the pattern character is mapped to a different word character, invalidate
+            the word.
+ -> Add valid words to valid_words
+
+  |
+Output Results
+  -> Print the list of valid words
+  |
+End

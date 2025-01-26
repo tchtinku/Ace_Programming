@@ -1,0 +1,110 @@
+Instead of generating a hash for every word and comparing it with the hash of the pattern, a better
+approach is to map the letters of the pattern and the corresponding letters in the word to 
+each other.
+
+Then, check whether every character in the pattern maps uniquely to a character in a word. And also,
+check whether every character in the word maps uniquely to a character in the pattern.
+
+During the process of mapping, three cases may arise:
+
+1. Case 1: The character in the pattern as well as the character in the word are not mapped to 
+any other character.
+
+    -> In such a case, map these characters to each other.
+
+2. Case 2: The character is the word is already mapped to some character in the pattern
+
+In such a case, check whether the new value to which it is being mapped is the same as the value
+to which it is already mapped.
+
+    -> If it is the same, continue.
+    -> Otherwise, the same character in the word is getting mapped to two different
+       characters of the pattern. Hence, the word is not a valid match.
+    
+3. Case 3; The character in the pattern is already mapped to some character in the word.
+
+In such a case, check whether the new value to which it is being mapped is the same as 
+the value to which it is already mapped
+
+    -> If it is the same, continue.
+    -> Otherwise, the same character in the pattern is getting mapped to two different characters
+    of the word. Hence, the word is not a valid match.
+
+4. Return the list of valid words.
+
+Let us understand this by an example:
+
+Let's assume the list of words is {abb, pqr} and the pattern given is "zxx"
+
+Mapping the pattern and the word "abb":
+z <-> a 
+x <-> b
+x <-> b
+
+As every letter in the pattern maps uniquely to a corresponding letter in the word. Hence "abb"
+is a valid match.
+
+Mapping the pattern and the word "pqr":
+z <-> p
+x <-> q
+x <-> r
+
+The same letter 'x' in the pattern is getting mapped to two different letters, 'q' and 'r'
+in the word. Hence "pqr" is not a valid match.
+
+Steps:
+
+1. Create two maps, mapPat to store the mapping between the characters of the pattern to 
+the characters of the word and another map, mapWord, to store the mapping between the characters
+of the word to the characters of the pattern.
+
+2. Loop 1: For every word in the list:
+   a. Check if length(word) = length(pattern):
+      -> If true: move to step 2b
+   b. Loop: For i=0 to length(pattern):
+      -> Let chW = word[i] and chP = pattern[i].
+      -> Check for Case 1: If mapPat[chP] = NULL and mapWord[chW] = NULL: then set mapPat[chP]=chW
+         and mapWord[chW] = chP.
+      -> Otherwise, check for Case 2: If mapPat[chP] != NULL and mapPat[chP] != chW; then
+         the current word is not a valid match, break.
+      -> Otherwise, check for Case 3: If mapWord[chW] != NULL and mapWord[chW] != chP; then 
+         the current word is not a valid match, break.
+
+   c. If the word is valid, add it to the list of valid words.
+
+Time Complexity: O(N*length(pattern)), where N = number of words in the list. In the worst
+case, we convert every word (including pattern) to  a string of integers. This gives us the
+complexity as O(N * max(length of all provided strings)). We can optimise it by checking if the
+length of the pattern is equal to the length of the word or not.
+
+Space Complexity: O(1), In the worst case, constant extra space is required for the map.
+
+---------------------------------------------------
+
+1. Input & Preparation:
+   -> Take a list of words and a pattern string as input.
+   -> Initialise an empty list valid_words to store words that match the pattern.
+
+2. Two Mappings: 
+   -> Use two dictionaries:
+      => mapPat to map characters of the pattern to characters of a word.
+      => mapWord to map characters of a word to characters of the pattern.
+
+3. Check each word:
+   -> For each word in the list:
+      => Check if the length of the word is equal to the length of the pattern. If not, skip
+         the word.
+      => Loop through the characters of the pattern and word together:
+          -> Case 1: If neither the character in the pattern nor the word is mapped"
+             => Map the pattern character to the word character in mapPat and vice versa in
+                mapWord.
+          -> Case 2: If the pattern character is already mapped:
+             => Check if it maps to the same word character as before. If not, mark the word
+                as invalid.
+          -> Case 3: If the word character is already mapped:
+             => Check if it maps to the same pattern character as before. If not, mark the work
+                as invalid.
+      => If the word passes all checks, add it to valid_words.
+
+4. Return Results:
+   -> Return the list of valid words
