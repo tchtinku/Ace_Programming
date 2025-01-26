@@ -1,0 +1,28 @@
+Start
+  |
+Input
+  -> string str
+  -> string ptr
+  |
+Initialize
+  |
+  -> result as an empty list
+  -> compute sorted_ptr by sorting ptr
+  |
+Outer Loop
+  -> For i from 0 to len(str) - len(ptr) + 1:
+      => Extract substring substring = str[i:i + len(ptr)].
+      => Sort substring.
+
+  |
+Check
+  -> If sorted(substring) equals sorted_ptr:
+       => Add i to result
+
+  |
+Continue to next index
+  |
+Output Results:
+   -> Print result containing all starting indices
+  |
+End

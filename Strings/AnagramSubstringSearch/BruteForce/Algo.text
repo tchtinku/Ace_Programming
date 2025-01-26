@@ -1,0 +1,50 @@
+In this approach, we will use two nested loops.
+
+Steps:
+-> Consider n = number of characters in the given string str & m = number of characters in the 
+given string ptr.
+
+-> The outer loop runs from 0 to n-m-1 for starting indices 'i' of anagram.
+
+-> For each character of str, we iterate from i to i + m - 1 and check for an anagram with the 
+given string str.
+
+-> For checking, we will sort all characters of str from i to i + m - 1 with the help of another
+temporary character array and check if all characters of str and ptr are the same or not.
+
+-> If all characters of str and ptr are same, we consider i in our answer sequence, in which we are 
+storing all the starting indices of the anagram.
+
+-> Then check for the next i.
+
+-> Finally, return the answer sequence.
+
+Time Complexity: O(N*M*log(M)), where N = number of characters in the given string str and M =
+number of characters in the given string ptr. For each indices we are sorting the length of the 
+M size characters array.
+
+Space Complexity: O(max(M, K)), where M = number of characters in the given string ptr and K is 
+the size of our answer sequence. In this approach, the answer sequence in which we store all the
+starting indices which are anagrams.
+
+---------------------------------------------------------
+
+1. Input and Preparation:
+   -> Take input for a string str and a string ptr.
+   -> Initialise an empty list result to store the starting indices of the substrings in str that 
+   are anagrams of ptr.
+
+2. Outer Loop:
+   -> Loop through indices i from 0 to len(str) - len(ptr) + 1. This ensures we only check valid
+   substrings
+
+3. Check Substrings:
+   -> Extract the substring of length equal to ptr starting at i.
+   -> Sort both the substring and ptr.
+   -> If the sorted substring equals the sorted ptr, add the starting index i to result.
+
+4. Repeat for Next index:
+   -> Move to the next index i and repeat the process.
+
+5. Return Results:
+   -> Return the list result containing the starting indices of anagrams of ptr in str.
