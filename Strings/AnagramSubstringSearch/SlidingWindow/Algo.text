@@ -1,0 +1,23 @@
+In this approach, we will use the concept of a sliding window.
+
+Steps
+
+1. Consider n = number of characters in given string str and m = number of characters in the given
+string ptr.
+
+2. We use array strMap to store the frequency of characters in str and ptrMap to store the 
+frequency of characters in ptr.
+
+3. The initial size of strMap and ptrMap is 26 and the value is '0'.
+
+4. To make the frequency map, we simply increment the value at index '0' of the map if we encounter
+'A' in our string. Similarly, we increment the vallue at index '1' by one if we encounter 'B' in 
+our string.
+
+5. Iterate i from 0 to n - 1 on string str. The value of strMap[0] will be incremented by one, if the
+character at str[i] is 'A', similarly the value of strMap[1] will increase by one if the character at 
+str[i] is 'B'. Once the iteration over str is complete, our frequency map strMap will be ready.
+
+6. Follow the same procedure to create ptrMap from the string ptr.
+
+7. Check 
