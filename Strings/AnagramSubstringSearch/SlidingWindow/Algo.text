@@ -20,4 +20,48 @@ str[i] is 'B'. Once the iteration over str is complete, our frequency map strMap
 
 6. Follow the same procedure to create ptrMap from the string ptr.
 
-7. Check 
+7. Check if strMap and ptrMap are same or not If both are same, then add '0' in the answer
+sequence in which we are storing all the starting indices of the anagram.
+
+8. Now iterate i from m to n-1.
+
+9. In strMap, decrease the value of str[i-m] and increase str[i] by one.
+
+10. In every iteration, check if strMap and ptrMap are same or not. If they are same, then add 
+i - m + 1 in the answer sequence.
+
+11. Finally, return the answer sequence.
+
+Time Complexity: O(N), N = number of characters in the given string str. A single iteration
+through the sequence is required.
+
+Space Complexity: O(K), K = size of our answer sequence. In this approach, the answer sequence
+is a sequence in which we store all the starting indices which are anagrams
+
+---------------------------------------------
+
+1. Input & Initialisation:
+   -> Take inputs for str and ptr.
+   -> Initialise two frequency maps, strMap and ptrMap, of size 26 (for each alphabet letter)
+      and set all values to 0.
+   -> Initialise result as an empty list to store the starting indices of anagram.
+
+2. Build frequency Map for ptr
+     -> Iterate through each character in ptr and update its frequency in ptrMap
+
+3. Initial Window Setup:
+   -> Iterate through the first m characters of str (where m = len(ptr)) and update their 
+      frequencies in strMap.
+
+4. Check Initial Window:
+   -> Compare strMap and ptrMap. If they are the same, add 0 to the result.
+
+5. Sliding Window:
+   -> Loop through the remaining characters of str starting from index m
+      => Decrement the frequency of the character leaving the window (str[i-m])
+      => Increment the frequency of the character entering the window (str[i])
+      => Compare strMap and ptrMap. If they match, add the starting index of the current 
+       window (i-m+1) to result.
+
+6. Return Results
+   -> Return the result list containing all starting indices of anagrams

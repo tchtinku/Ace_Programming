@@ -1,0 +1,32 @@
+Start
+  |
+Input
+ -> String str
+ -> Pattern ptr
+ |
+Check Lengths
+ -> If len(ptr) > len(str), return empty list.
+ |
+Initialize frequency maps:
+ -> Create strMap and ptrMap (size 26, all zeros).
+ -> Initialize an empty list result
+ |
+Build ptrMap
+ -> Loop through each character in ptr to populate ptrMap
+ |
+Build Initial strMap
+ -> Loop through the first m characters of str to populate strMap
+ |
+Check initial window
+ -> If strMap equals ptrMap, add 0 to the result
+ |
+Sliding Window
+ -> Loop through the remaining characters of str starting from m.
+    => Decrement the frequency of str[i-m] in strMap
+    => Increment the frequency of str[i] in strMap
+    => If strMap equals ptrMap, add i-m+1 to result.
+ |
+Return Results
+ -> Print result
+ |
+End
